@@ -43,3 +43,27 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Use Bootstrap for themes
+gem "bootstrap-sass"
+
+gem "font-awesome-rails"
+
+gem "jquery-ui-rails"
+
+group :development do
+  gem 'sqlite3'
+  gem "better_errors"
+  gem "binding_of_caller"
+end
+
+# Use simple_form for create forms
+gem "simple_form"
+
+gem 'rack-cache', :require => 'rack/cache'
+gem "dragonfly"
+gem 'jquery-fileupload-rails'
+
+gem 'fotoramajs'
+
+gem 'initjs'

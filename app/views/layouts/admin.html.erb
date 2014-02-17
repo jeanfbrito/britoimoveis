@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- <link rel="shortcut icon" href="../../assets/ico/favicon.ico"> -->
+  <title>Brito Negócios Imobiliários</title>
+  
+  <%= stylesheet_link_tag    "application-admin", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application-admin", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="container" style=" border 1px solid red;">
+    <br>
+    <!-- Admin menu -->
+    <%= render "admin/shared/menu"%>
+    <%= yield %>
+  </div> <!-- /container -->
+
+</body>
+
+</html>

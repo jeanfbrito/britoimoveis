@@ -1,4 +1,18 @@
 Britoimoveis::Application.routes.draw do
+  resources :properties, :only => [:index, :show]
+  resources :contact_messages, only: [:new, :create]
+
+  namespace :admin do
+    resources :properties do
+      get :pictures_upload
+    end
+    resources :pictures, :only => [:index, :create, :destroy]
+  end
+
+  #get '/contato', :to => "contact_messages#new", :as => "contact"
+
+  #root :to => 'high_voltage/pages#show', id: 'home'
+  root to: "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

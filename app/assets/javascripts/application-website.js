@@ -11,13 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require jquery.ui.core
-//= require jquery.ui.slider
-//= require jquery.ui.mouse
-//= require jquery.ui.widget
 //= require bootstrap
+//= require fotorama
 //= require turbolinks
-//= require areasrurais/areasrurais.js
 //= require init.js
-//= require_tree .
+//= require_tree ./website
