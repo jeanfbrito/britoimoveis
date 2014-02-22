@@ -4,9 +4,10 @@ Britoimoveis::Application.routes.draw do
 
   namespace :admin do
     resources :properties do
+      resources :pictures, :only => [:index, :create, :destroy]
       get :pictures_upload
     end
-    resources :pictures, :only => [:index, :create, :destroy]
+    
   end
 
   #get '/contato', :to => "contact_messages#new", :as => "contact"
