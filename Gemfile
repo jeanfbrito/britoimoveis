@@ -64,6 +64,8 @@ gem 'rack-cache', :require => 'rack/cache'
 gem "dragonfly"
 gem 'jquery-fileupload-rails'
 
+gem 'inherited_resources'
+
 gem 'fotoramajs'
 
 gem 'initjs'

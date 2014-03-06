@@ -1,9 +1,15 @@
-class Admin::PicturesController < ApplicationController
+class Admin::PicturesController < InheritedResources::Base
+
+  before_filter :find_property
+
+  def find_property
+      @property = Property.find(params[:property_id])
+  end
 
   def index
-    #@pictures = Picture.all
+    @pictures = @property.pictures
     #render :json => @pictures.collect { |p| p.to_jq_upload }.to_json
-    render :json => [].to_json
+    #render :json => [].to_json
   end
 
   def create

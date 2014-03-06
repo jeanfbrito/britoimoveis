@@ -1,4 +1,4 @@
-class Admin::PropertiesController < ApplicationController
+class Admin::PropertiesController < InheritedResources::Base
 	layout "admin" 
 
   def index

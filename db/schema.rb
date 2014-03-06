@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140215221204) do
+ActiveRecord::Schema.define(version: 20140222153220) do
 
   create_table "cities", force: true do |t|
     t.string   "name"
@@ -27,6 +27,19 @@ ActiveRecord::Schema.define(version: 20140215221204) do
     t.string   "name"
     t.integer  "city_id"
     t.integer  "cep"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pictures", force: true do |t|
+    t.text     "description"
+    t.integer  "property_id"
+    t.integer  "order"
+    t.boolean  "cover",          default: false
+    t.boolean  "mobile_catalog", default: false
+    t.boolean  "website",        default: false
+    t.string   "file_uid"
+    t.string   "file_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

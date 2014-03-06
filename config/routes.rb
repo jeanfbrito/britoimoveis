@@ -4,8 +4,9 @@ Britoimoveis::Application.routes.draw do
 
   namespace :admin do
     resources :properties do
-      resources :pictures, :only => [:index, :create, :destroy]
       get :pictures_upload
+      resources :pictures do#, :only => [:index, :create, :destroy]
+      end
     end
     
   end

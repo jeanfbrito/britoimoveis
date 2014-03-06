@@ -18,3 +18,4 @@ class Property < ActiveRecord::Base
   end
 
 end
+
