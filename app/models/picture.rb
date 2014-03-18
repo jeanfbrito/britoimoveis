@@ -1,5 +1,5 @@
 class Picture < ActiveRecord::Base
-  #include Rails.application.routes.url_helpers
+  include Rails.application.routes.url_helpers
   dragonfly_accessor :file
 
   belongs_to :property
