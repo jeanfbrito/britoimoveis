@@ -1,4 +1,5 @@
 class Admin::PicturesController < InheritedResources::Base
+  layout "admin" 
 
   before_filter :find_property
 
