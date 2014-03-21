@@ -103,11 +103,3 @@ body {
 .modal-wide .modal-body {
   overflow-y: auto;
 }
-
-/* irrelevant styling */
-body { text-align: center; }
-body p { 
-  max-width: 400px; 
-  margin: 20px auto; 
-}
-#tallModal .modal-body p { margin-bottom: 900px }
