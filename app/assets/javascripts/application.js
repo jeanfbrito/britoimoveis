@@ -20,4 +20,6 @@
 //= require turbolinks
 //= require areasrurais/areasrurais.js
 //= require init.js
+//= require britoimoveis/britoimoveis.js
+//= require init.js
 //= require_tree .
