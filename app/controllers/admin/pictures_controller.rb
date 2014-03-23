@@ -8,7 +8,7 @@ class Admin::PicturesController < InheritedResources::Base
   end
 
   def index
-    @pictures = @property.pictures
+    @pictures = @property.pictures.order("position")
     #render :json => @pictures.collect { |p| p.to_jq_upload }.to_json
     #render :json => [].to_json
   end
@@ -33,6 +33,13 @@ class Admin::PicturesController < InheritedResources::Base
       render :json => [{:error => "custom_failure"}], :status => 304
     end
   end
+
+  def sort
+    params[:picture].each_with_index do |id, index|
+       Picture.where(id: id).update_all({position: index+1})
+    end
+    render nothing: true
+   end
 
   def destroy
     @picture = Picture.find(params[:id])

@@ -4,7 +4,9 @@ Britoimoveis::Application.routes.draw do
 
   namespace :admin do
     resources :properties do
-      resources :pictures
+      resources :pictures do
+        collection { post :sort }
+      end
       get :pictures_upload
     end
   end

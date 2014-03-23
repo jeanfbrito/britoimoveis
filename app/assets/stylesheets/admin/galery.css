@@ -48,13 +48,13 @@
     //text-align: center;
 }
 
-#sortable { 
+#pictures { 
   list-style-type: none; 
   margin: 0; 
   padding: 0;
 }
 
-#sortable li { 
+#pictures li { 
   //margin: 3px 3px 3px 0;
   padding: 5px; 
   float: left;  

@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20140222153220) do
   create_table "pictures", force: true do |t|
     t.text     "description"
     t.integer  "property_id"
-    t.integer  "order"
+    t.integer  "position"
     t.boolean  "cover",          default: false
     t.boolean  "mobile_catalog", default: false
     t.boolean  "website",        default: false

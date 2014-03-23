@@ -4,7 +4,7 @@ class CreatePictures < ActiveRecord::Migration
 
       t.text    :description
       t.integer :property_id
-      t.integer :order
+      t.integer :position
 
       t.boolean :cover, :default => false
       t.boolean :mobile_catalog, :default => false

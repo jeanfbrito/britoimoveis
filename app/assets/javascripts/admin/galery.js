@@ -1,11 +1,11 @@
 function deactivate_all() {
-    $('#sortable li').unbind('click');
-    $( "#sortable" ).sortable({ disabled: true });
+    $('#pictures li').unbind('click');
+    $( "#pictures" ).sortable({ disabled: true });
 }
 
 function select_cover(){
     deactivate_all();
-    $('#sortable li').bind("click", function() {
+    $('#pictures li').bind("click", function() {
         $('.ribbon-outer').remove();
         $(this).prepend('<div class="ribbon-outer"> <div class="ribbon-inner">Capa</div> </div>');
         return false;
@@ -14,7 +14,7 @@ function select_cover(){
 
 function select_delete(){
     deactivate_all();
-    $('#sortable li').bind("click", function() {
+    $('#pictures li').bind("click", function() {
         $(this).find('.fa-times-circle').toggle();
         return false;
     });
@@ -22,20 +22,23 @@ function select_delete(){
 
 function resort_images() {
     deactivate_all();
-    $( "#sortable" ).sortable({ 
+    $( "#pictures" ).sortable({ 
         tolerance: "pointer",
         disabled: false,
+        update: function() {
+          return $.post($(this).data('update-url'), $(this).sortable('serialize'));
+        },
         start: function(event, ui){
-            $(ui.item).height($('#sortable li').height());
-            $(ui.placeholder).height($('#sortable li').height());           
+            $(ui.item).height($('#pictures li').height());
+            $(ui.placeholder).height($('#pictures li').height());           
            }
     });
-    $( "#sortable" ).disableSelection();
+    $( "#pictures" ).disableSelection();
 }
 
 function select_website_images(){
     deactivate_all();
-    $('#sortable li').bind("click", function() {
+    $('#pictures li').bind("click", function() {
         $(this).find('.fa-globe').toggle();
         return false;
     });
@@ -43,7 +46,7 @@ function select_website_images(){
 
 function select_mobile_images(){
     deactivate_all();
-    $('#sortable li').bind("click", function() {
+    $('#pictures li').bind("click", function() {
         $(this).find('.fa-tablet').toggle();
         return false;
     });
