@@ -69,3 +69,6 @@ gem 'inherited_resources'
 gem 'fotoramajs'
 
 gem 'initjs'
+
+gem 'acts_as_list'
+
