@@ -15,5 +15,4 @@
 //= require jquery.ui.all
 //= require jquery-fileupload
 //= require bootstrap
-//= require turbolinks
 //= require_tree ./admin

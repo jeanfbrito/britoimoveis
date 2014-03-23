@@ -13,6 +13,5 @@
 //= require jquery
 //= require bootstrap
 //= require fotorama
-//= require turbolinks
 //= require init.js
 //= require_tree ./website
