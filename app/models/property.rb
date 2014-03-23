@@ -1,6 +1,6 @@
 class Property < ActiveRecord::Base
 
-  has_many :pictures
+  has_many :pictures, -> { order("position ASC") }
   belongs_to :district
 
   def get_cover

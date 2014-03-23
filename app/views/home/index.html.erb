@@ -123,24 +123,21 @@
                 <li data-target="#carousel-example-captions" data-slide-to="2" class=""></li>
               </ol>
               <div class="carousel-inner">
-                <div class="item active">
-                  <img src="http://britoimoveis.net/sitios/slide/1.jpg">
-                  <div class="carousel-caption">
-                    <p>Sítio à venda em Rio da Ilha - Taquara</p>
+                <% if @banner.count > 0 %>
+                  <% @banner.each_with_index do |property, index|%>
+                  <% if index < 1 %>
+                    <div class="item active">
+                  <% else %> 
+                    <div class="item">
+                  <% end %>
+                    <img src="<%= property.pictures.first.file.thumb('848x360#').url %>">
+                    <div class="carousel-caption">
+                      <p>Sítio à venda em Rio da Ilha - Taquara</p>
+                    </div>
                   </div>
-                </div>
-                <div class="item">
-                  <img src="http://britoimoveis.net/sitios/slide/2.jpg">
-                  <div class="carousel-caption">
-                    <p>Sítio à venda em Rio da Ilha - Taquara</p>
-                  </div>
-                </div>
-                <div class="item">
-                  <img src="http://britoimoveis.net/sitios/slide/3.jpg">
-                  <div class="carousel-caption">
-                    <p>Sítio à venda em Rio da Ilha - Taquara</p>
-                  </div>
-                </div>
+
+                  <% end %>
+                <% end %>
               </div>
               <a class="left carousel-control" href="#carousel-example-captions" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
@@ -220,78 +217,20 @@
       </div>
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-4  col-xs-12">
-          <br>
-          <img src="http://britoimoveis.net/sitios/1.jpg" class="img-responsive thumbnail" alt="Responsive image">
-          <h4>Rio da Ilha - Taquara</h4>
-          <h4>R$ 1.300.000,00</h4>
-          <p>15 héctares</p>
+        <% if @destaques.count > 0 %>
+          <% @destaques.each do |property|%>
+          <div class="col-lg-3 col-md-3 col-sm-4  col-xs-12">
+            <br>
+            <img src="<%= property.pictures.first.file.thumb('800x600#').url %>" class="img-responsive thumbnail" alt="Responsive image">
+            <h4>Rio da Ilha - Taquara</h4>
+            <h4>R$ 1.300.000,00</h4>
+            <p>15 héctares</p>
 
-          <p><a class="btn btn-primary" href="#" role="button">Mais detalhes »</a></p>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-4  col-xs-12">
-          <br>
-          <img src="http://britoimoveis.net/sitios/2.jpg" class="img-responsive thumbnail"  alt="Responsive image">
-          <h4>Rio da Ilha - Taquara</h4>
-          <h4>R$ 1.300.000,00</h4>
-          <p>15 héctares</p>
+            <p><a class="btn btn-primary" href="#" role="button">Mais detalhes »</a></p>
+          </div>
 
-          <p><a class="btn btn-primary" href="#" role="button">Mais detalhes »</a></p>
-       </div>
-        <div class="col-lg-3 col-md-3 col-sm-4  col-xs-12">
-          <br>
-          <img src="http://britoimoveis.net/sitios/3.jpg" class="img-responsive thumbnail" alt="Responsive image">
-          <h4>Rio da Ilha - Taquara</h4>
-          <h4>R$ 1.300.000,00</h4>
-          <p>15 héctares</p>
-
-          <p><a class="btn btn-primary" href="#" role="button">Mais detalhes »</a></p>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-4  col-xs-12">
-          <br>
-          <img src="http://britoimoveis.net/sitios/4.jpg" class="img-responsive thumbnail" alt="Responsive image">
-          <h4>Rio da Ilha - Taquara</h4>
-          <h4>R$ 1.300.000,00</h4>
-          <p>15 héctares</p>
-
-          <p><a class="btn btn-primary" href="#" role="button">Mais detalhes »</a></p>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-4  col-xs-12">
-          <br>
-          <img src="http://britoimoveis.net/sitios/5.jpg" class="img-responsive thumbnail" alt="Responsive image">
-          <h4>Rio da Ilha - Taquara</h4>
-          <h4>R$ 1.300.000,00</h4>
-          <p>15 héctares</p>
-
-          <p><a class="btn btn-primary" href="#" role="button">Mais detalhes »</a></p>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-4  col-xs-12">
-          <br>
-          <img src="http://britoimoveis.net/sitios/6.jpg" class="img-responsive thumbnail" alt="Responsive image">
-          <h4>Rio da Ilha - Taquara</h4>
-          <h4>R$ 1.300.000,00</h4>
-          <p>15 héctares</p>
-
-          <p><a class="btn btn-primary" href="#" role="button">Mais detalhes »</a></p>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-4  col-xs-12">
-          <br>
-          <img src="http://britoimoveis.net/sitios/7.jpg" class="img-responsive thumbnail" alt="Responsive image">
-          <h4>Rio da Ilha - Taquara</h4>
-          <h4>R$ 1.300.000,00</h4>
-          <p>15 héctares</p>
-
-          <p><a class="btn btn-primary" href="#" role="button">Mais detalhes »</a></p>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-4  col-xs-12">
-          <br>
-          <img src="http://britoimoveis.net/sitios/8.jpg" class="img-responsive thumbnail" alt="Responsive image">
-          <h4>Rio da Ilha - Taquara</h4>
-          <h4>R$ 1.300.000,00</h4>
-          <p>15 héctares</p>
-
-          <p><a class="btn btn-primary" href="#" role="button">Mais detalhes »</a></p>
-        </div>
+          <% end %>
+        <% end %>
       </div>
 
       <!-- Site footer -->
