@@ -15,7 +15,7 @@ function select_cover(){
 function select_delete(){
     deactivate_all();
     $('#sortable li').bind("click", function() {
-        $(this).find('.icon-remove').toggle();
+        $(this).find('.fa-times-circle').toggle();
         return false;
     });
 }
@@ -36,7 +36,7 @@ function resort_images() {
 function select_website_images(){
     deactivate_all();
     $('#sortable li').bind("click", function() {
-        $(this).find('.icon-globe').toggle();
+        $(this).find('.fa-globe').toggle();
         return false;
     });
 }
@@ -44,7 +44,7 @@ function select_website_images(){
 function select_mobile_images(){
     deactivate_all();
     $('#sortable li').bind("click", function() {
-        $(this).find('.icon-tablet').toggle();
+        $(this).find('.fa-tablet').toggle();
         return false;
     });
 }
