@@ -1,9 +1,9 @@
 class Picture < ActiveRecord::Base
   include Rails.application.routes.url_helpers
   dragonfly_accessor :file
-  acts_as_list
-
+  
   belongs_to :property
+  acts_as_list scope: :property
 
   #attr_accessible :file_uid, :file_name, :file
    #one convenient method to pass jq_upload the necessary information
