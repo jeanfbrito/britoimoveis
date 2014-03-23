@@ -221,12 +221,14 @@
           <% @destaques.each do |property|%>
           <div class="col-lg-3 col-md-3 col-sm-4  col-xs-12">
             <br>
-            <img src="<%= property.pictures.first.file.thumb('800x600#').url %>" class="img-responsive thumbnail" alt="Responsive image">
+            <a href="<%= property_url(property) %>" >
+              <img src="<%= property.pictures.first.file.thumb('800x600#').url %>" class="img-responsive thumbnail" alt="Responsive image">
+            </a>
             <h4>Rio da Ilha - Taquara</h4>
             <h4>R$ 1.300.000,00</h4>
             <p>15 héctares</p>
 
-            <p><a class="btn btn-primary" href="#" role="button">Mais detalhes »</a></p>
+            <p><a class="btn btn-primary" href="<%= property_url(property) %>" role="button">Mais detalhes »</a></p>
           </div>
 
           <% end %>

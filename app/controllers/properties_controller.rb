@@ -11,6 +11,7 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
+    @pictures = @property.pictures.order("position")
 
     respond_to do |format|
       format.html #{ render :layout => false if request.xhr? }
