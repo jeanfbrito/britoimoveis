@@ -55,14 +55,14 @@
 }
 
 #sortable li { 
-  margin: 3px 3px 3px 0;
+  //margin: 3px 3px 3px 0;
   padding: 5px; 
   float: left;  
   font-size: 4em; 
   text-align: center; 
-  width:22%; /*tested in iPad and 1080px;*/
-  max-width: 300px;
-  min-width: 140px;
+  //width:22%; /*tested in iPad and 1080px;*/
+  //max-width: 300px;
+  //min-width: 140px;
 }
   
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
@@ -99,8 +99,8 @@ a.fancybox img{
  height:108px;
  overflow:hidden; 
  position:absolute;
- top: -2px;
-  left: -2px;
+ //top: -2px;
+ //left: -2px;
 }
 .ribbon-inner
 {
@@ -136,4 +136,8 @@ text-align:center;
 }
 .ribbon-inner:after {
   right: 0;
+}
+
+.thumbnail {
+ margin-bottom: 0px;
 }
