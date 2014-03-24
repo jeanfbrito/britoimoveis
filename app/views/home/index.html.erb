@@ -8,9 +8,6 @@
 
     <title>Brito Negócios Imobiliários</title>
 
-    <!-- Bootstrap core CSS -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="http:\\netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -20,9 +17,6 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style type="text/css">
-      
-    </style>
   </head>
 
   <body>
@@ -198,7 +192,7 @@
           <div class="col-lg-3 col-md-3 col-sm-4  col-xs-12">
             <br>
             <a href="<%= property_url(property) %>" >
-              <img src="<%= property.pictures.first.file.thumb('800x600#').url %>" class="img-responsive thumbnail" alt="Responsive image">
+              <img src="<%= property.pictures.first.file.thumb('253x190#').url %>" class="img-responsive thumbnail" alt="Responsive image">
             </a>
             <h4>Rio da Ilha - Taquara</h4>
             <h4>R$ 1.300.000,00</h4>
@@ -224,13 +218,5 @@
             });
 </script>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-<script src="holder.js"></script>
-  <!-- Latest compiled and minified JavaScript -->
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
 </body></html>
