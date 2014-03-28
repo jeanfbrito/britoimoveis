@@ -242,19 +242,20 @@
                   </a>
                   <div class="media-body">
                     <h4 class="media-heading">Ref: <%= property.id %></h4>
-                    <b> Proprietário: </b>
-                            Jean Brito, Carolina Pohren
-                            <br>
-                            <b> Casa para Aluguel </b>
-                            <br>
-                            <b> Localidade: </b>
-                            Centro, Taquara - RS
-                            <br>
-                            <b> Valor: </b>
-                            R$ 1.000.000,00
-                            <br>
-                            <br>
-                            <b> Descrição: </b>Com toda infra-instrutora necessária para lida com gado. Reflorestamento e plantações. São 3 casas, 1 galpão com piso de pedra, medindo 12m x 17m, outro galpão de 6m x 4m, moinho para milho e arroz tocado a ...
+                      <b> <%= property.property_type.name %> para <%= property.business_type.name %> </b>
+                      <br>
+                      <b> Localidade: </b>
+                      <%= property.district.name %>, <%= property.district.city.name %> - <%= property.district.city.state.uf %>
+                      <br>
+                      <b> Valor: </b>
+                      <% if property.sell_price %>
+                        <%= property.sell_price %>
+                      <% else %>
+                        Consulte
+                      <% end %>
+                      <br>
+                      <br>
+                      <b> Descrição: </b><%= property.description.truncate(300) %>
                   </div>
                 </div>
               <% end %>
