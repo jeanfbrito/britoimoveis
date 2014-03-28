@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Britoimoveis</title>
   <%= stylesheet_link_tag    "application-website", media: "all", "data-turbolinks-track" => false %>
   <%= javascript_include_tag "application-website", "data-turbolinks-track" => false %>
@@ -9,7 +11,11 @@
 <body>
   <%= initjs_tag 'Britoimoveis' %>
 
-<%= yield %>
+  <%= render "shared/header"%>
+
+  <%= yield %>
+
+  <%= render "shared/footer"%>
 
 </body>
 </html>
