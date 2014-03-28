@@ -79,7 +79,9 @@ class Admin::PropertiesController < InheritedResources::Base
                                         :furnished,
                                         :construction_year,
                                         :sell_price,
-                                        :client_price)
+                                        :client_price,
+                                        :property_type_id,
+                                        :business_type_id)
     end
 
 end

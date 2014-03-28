@@ -24,3 +24,9 @@
                         { name: 'XV Novembro', city_id: 2, cep: 95650000 },
                         { name: 'Rio da Ilha', city_id: 1, cep: 95600000 },
                         { name: 'Floresta', city_id: 5, cep: 95650000  }])
+  business = BusinessType.create([{ name: 'Venda'},
+                                  { name: 'Aluguel'}])
+  types = PropertyType.create([{ name: 'Casa'},
+                               { name: 'Apartamento'},
+                               { name: 'Chacara'},
+                               { name: 'Sitio'}])

@@ -2,6 +2,8 @@ class Property < ActiveRecord::Base
 
   has_many :pictures, -> { order("position ASC") }
   belongs_to :district
+  belongs_to :property_type
+  belongs_to :business_type
 
   def get_cover
   	#cover = pictures.where(property_id: id, cover: true).first

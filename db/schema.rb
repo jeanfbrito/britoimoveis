@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140222153220) do
+ActiveRecord::Schema.define(version: 20140328130104) do
+
+  create_table "business_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "cities", force: true do |t|
     t.string   "name"
@@ -66,6 +72,14 @@ ActiveRecord::Schema.define(version: 20140222153220) do
     t.integer  "construction_year"
     t.integer  "garages"
     t.boolean  "furnished"
+    t.integer  "property_type_id"
+    t.integer  "business_type_id"
+  end
+
+  create_table "property_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "states", force: true do |t|

@@ -84,8 +84,11 @@
     <div class="col-lg-2">
           <%= f.input :client_price, placeholder: '120', :input_html => { :class => "form-control" }, hint: 'em reais. Ex.: 100000 para R$100.000,00'%>
     </div>
-
     <div class="col-lg-2">
+          <%= f.association :property_type, :input_html => { :class => "form-control" }%>
+    </div>
+    <div class="col-lg-2">
+          <%= f.association :business_type, :input_html => { :class => "form-control" }%>
     </div>
   </div>
 
