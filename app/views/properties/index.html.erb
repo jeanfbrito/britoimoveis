@@ -216,15 +216,8 @@
             <div id="properties-list" class="row">
 
               <div class="col-lg-6 col-lg-offset-3">
-                <ul class="pagination">
-                  <li><a href="#">&laquo;</a></li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li><a href="#">&raquo;</a></li>
-                </ul>
+                <%= paginate @properties, :theme => 'twitter-bootstrap-3', 
+                   :pagination_class => "pagination-small pagination-centered" %>
               </div>
               <div class="col-lg-3 pull-right">
                 <form role="form">

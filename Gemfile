@@ -72,3 +72,6 @@ gem 'initjs'
 
 gem 'acts_as_list'
 
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
+
