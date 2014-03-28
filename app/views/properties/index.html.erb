@@ -1,0 +1,288 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>Brito Negócios Imobiliários</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http:\\netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+
+    <link  href="http://fotorama.s3.amazonaws.com/4.4.9/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+      .carousel-caption {
+        bottom: 0px;
+        background-color: black;
+        opacity: 0.65;
+        left: 0px;
+        right: 0px;
+        padding-top: 15px;
+        padding-bottom: 25px;
+      }
+      .carousel-indicators {
+        bottom: -5px;
+      }
+      .title-divider {
+        text-align: left;
+        //margin-bottom: 1em;
+        background: #ffffff url(./bg_divider.png) left center repeat-x;
+        padding: 0;
+      }
+      .title-divider span {
+        background: #ffffff;
+        padding-right: 0.5em;
+      }
+      .title-divider small {
+        display: block;
+        color: rgba(51, 51, 51, 0.6);
+      }
+      .block .title {
+        font-size: 18px;
+        text-transform: uppercase;
+        margin: 0 0 0.5em 0;
+        line-height: 1;
+      }
+      #map_canvas {
+        width: 350px;
+        height: 250px;
+      }
+      .divider {
+        width: auto;
+        height: 0px;
+        border-top: 1px solid #969696;
+        border-bottom: 1px solid #fff;
+        margin: 15px 0;
+      }
+      #imoveis .media-heading{
+       padding-top: 5px;
+      }
+      #properties-list .pagination{
+       margin: 0px;
+      }
+      .title-divider h2{        
+        border-bottom: 1px solid #959595;
+      }
+      body {
+        background: url('./img/pattern/whitey.png');
+      }
+      .index-header{
+        background: url('./img/pattern/low_contrast_linen.png');
+        background-color: #313131;
+        border-bottom: 1px solid #313131;
+        display: block;
+        color: #E3E3E3;
+      }
+     </style>
+  </head>
+
+  <body>
+    <div class="index-header">
+    <div class="container">
+      <div class="col-lg-12 col-md-12 hidden-sm hidden-xs">
+        <div style="float: left;">
+          <h1>Brito Negócios Imobiliários</h1>
+        </div>
+        <div style="float: right;">
+          <h1>Contato: (51) 9776-6603</h1>
+        </div>
+      </div>
+      <div class="col-sm-12 hidden-lg hidden-md hidden-xs">
+        <div style="float: left;">
+          <h3>Brito Negócios Imobiliários</h3>
+        </div>
+        <div style="float: right;">
+          <h3>Contato: (51) 9776-6603</h3>
+        </div>
+      </div>
+      <div class="col-xs-12 hidden-lg hidden-md hidden-sm">
+        <div style="float: left;">
+          <h5>Brito Negócios Imobiliários</h5>
+        </div>
+        <div style="float: right;">
+          <h5>Contato: (51) 9776-6603</h5>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <!-- <a class="navbar-brand" href="/">          
+          Differential          
+        </a> -->
+        <ul class="nav navbar-nav pull-left visible-lg">
+
+
+          <li class="active"><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
+          <li class=""><a href="/imoveis.html">Imóveis</a></li>
+          <li class=""><a href="/about">Sobre nós</a></li>
+          <li class=""><a href="/contact">Contato</a></li>
+
+
+        </ul>
+
+        <a class="mobile-menu-trigger pull-right hidden-lg" href="#mobileNav"> <i class="icon-reorder"></i>
+        </a>
+
+        <div id="mobile-menu" style="display: none;">
+          <ul>
+            <li class=""><a href="/about">About</a></li>
+            <li class=""><a href="/companies">Companies</a></li>
+            <li class=""><a href="/team">Team</a></li>
+            <li class=""><a href="/blog">Blog</a></li>
+            <li class=""><a href="/connect">Jobs</a></li>
+            <li class=""><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-3">
+          <form role="form">
+            <h3>Pesquise avançada:</h3>
+            <div class="form-group">
+              <select class="form-control">
+                <option>Escolha a Cidade</option>
+                <option>Taquara</option>
+                <option>Igrejinha</option>
+                <option>Parobé</option>
+                <option>Rolante</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <select class="form-control">
+                <option>Escolha o Bairro</option>
+                <option>Santa Rosa</option>
+                <option>Rio da Ilha</option>
+                <option>Padilha</option>
+                <option>Centro</option>
+              </select>
+            </div>
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <select class="form-control" name="quartos">
+                    <option value="indiferente">Quartos</option>
+                    <option value="1">1 quarto</option>
+                    <option value="2">2 quartos</option>
+                    <option value="3">3 quartos</option>
+                    <option value="4">4 quartos</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <select class="form-control" name="vagas">
+                    <option value="indiferente">Garagem</option>
+                    <option value="1">1 vaga</option>
+                    <option value="2">2 vagas</option>
+                    <option value="3">3 vagas</option>
+                    <option value="4">4 vagas</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+                <select class="form-control" name="tipo">
+                  <option value="indiferente">Escolha o tipo do imóvel</option>
+                  <option value="3">Apartamento</option>
+                  <option value="4">Casa</option>
+                  <option value="6">Cobertura</option>
+                  <option value="7">Escritório</option>
+                </select>
+            </div>
+            <div class="row">
+              <div class="col-xs-6 col-md-6"><input type="submit" value="Pesquisar" class="btn btn-success btn-block btn-lg" tabindex="7"></div>
+            </div>
+          </form>
+
+        </div>
+        <div id="imoveis" class="col-lg-9">
+            <div id="properties-list" class="row">
+
+              <div class="col-lg-6 col-lg-offset-3">
+                <ul class="pagination">
+                  <li><a href="#">&laquo;</a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li><a href="#">&raquo;</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-3 pull-right">
+                <form role="form">
+                  <div class="form-group">
+                    <select class="form-control">
+                      <option>Ordenar por</option>
+                      <option>Menor Valor</option>
+                      <option>Maior Valor</option>
+                      <option>Maior area</option>
+                      <option>Menor area</option>
+                    </select>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+            <% if @properties.count > 0 %>
+              <% @properties.each do |property| %>
+                <div class="media">
+                  <a class="pull-left  col-lg-4" href="<%= property_url(property) %>">
+                    <img class="media-object img-responsive thumbnail" src="<%= property.pictures.first.file.thumb('253x190#').url %>" alt="...">
+                  </a>
+                  <div class="media-body">
+                    <h4 class="media-heading">Ref: <%= property.id %></h4>
+                    <b> Proprietário: </b>
+                            Jean Brito, Carolina Pohren
+                            <br>
+                            <b> Casa para Aluguel </b>
+                            <br>
+                            <b> Localidade: </b>
+                            Centro, Taquara - RS
+                            <br>
+                            <b> Valor: </b>
+                            R$ 1.000.000,00
+                            <br>
+                            <br>
+                            <b> Descrição: </b>Com toda infra-instrutora necessária para lida com gado. Reflorestamento e plantações. São 3 casas, 1 galpão com piso de pedra, medindo 12m x 17m, outro galpão de 6m x 4m, moinho para milho e arroz tocado a ...
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+
+          <div class="col-lg-6 col-lg-offset-3">
+            <ul class="pagination pagination-centered">
+              <li><a href="#">&laquo;</a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">&raquo;</a></li>
+            </ul>
+          </div> 
+        </div>
+
+      </div>
+
+    </div> <!-- /container -->
+
+
+</body></html>

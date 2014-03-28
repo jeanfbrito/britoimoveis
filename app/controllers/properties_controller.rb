@@ -1,7 +1,8 @@
 class PropertiesController < ApplicationController
   def index
-    @search = Property.search(params[:q])
-    @properties = @search.result
+    #@search = Property.search(params[:q])
+    #@properties = @search.result
+    @properties = Property.all
 
     #@properties = Property.all
     respond_to do |format|
