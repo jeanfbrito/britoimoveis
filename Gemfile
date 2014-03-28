@@ -75,3 +75,5 @@ gem 'acts_as_list'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 
+gem "rails-i18n", "~> 4.0.0"
+

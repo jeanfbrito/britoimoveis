@@ -182,31 +182,10 @@
               
               <!-- about property --> 
               <div class="row-fluid property-info">
-                  <h4>About the property</h4>
+                  <h4>Sobre:</h4>
                   
                   <p class="description">
-                    Reflecting the status of this desirable destination a 4/5 bedroom townhouses at Terrace Yard offers 
-                    contemporary living in unmatched style and elegance. With a high specification throughout, secure private 
-                    undercroft parking behind remotely controlled access gates and Berkeley's quest for excellence, these are 
-                    homes of unparalleled appeal. Imposing, contemporary architecture sets the scene for the sleek style of the 
-                    interiors at Terrace Yard, where form blends perfectly with function to create homes beautifully designed for 
-                    modern living. Living areas have been designed as fluid spaces, seamlessly linking rooms to provide an 
-                    environment that's perfect for entertaining and family life alike.
-                  </p>
-        
-                  <p class="description">
-                    At the heart of the home, the kitchens feature Italian designer furniture, reflecting the cutting edge, 
-                    contemporary architecture. Stone worktops, glass back panelling, mood lighting and a comprehensive range 
-                    of Siemens appliances enhance the appeal of this functional space creating an ultimate environment of luxury 
-                    living.
-                  </p>
-        
-                  <p class="description">
-                    <strong>Features:</strong> Living room, dining room, kitchen, 
-                    powder room, lanai, carport, laundry area. masters bedroom with toilet and bathroom, terrace, hallway.
-                  </p>
-                  <p class="description">
-                    Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.
+                    <%= @property.description %>
                   </p>
                   
               </div>
@@ -219,15 +198,32 @@
               <h4>Características do imóvel:</h4>
               <div class="property-info">
               <ul class="property-info">
-                <li><strong>Quartos:</strong> 2 </li>
-                <li><strong>Banheiros:</strong> 5</li>
-                <li><strong>Estacionamento</strong> 1</li>
-                <li><strong>Categories :</strong> Lot</li>
-                <li><strong>Location :</strong> Toronto, Ontario</li>
+                <% if @property.suits > 0 %>
+                  <li><strong>Suites:</strong> <%= @property.suits %> </li>
+                <% end %>
+                <% if @property.bedrooms > 0 %>
+                  <li><strong>Quartos:</strong> <%= @property.bathrooms %> </li>
+                <% end %>
+                <% if @property.bathrooms > 0 %>
+                  <li><strong>Banheiros:</strong> <%= @property.bathrooms %> </li>
+                <% end %>
+                <% if @property.garages > 0 %>
+                  <li><strong>Vagas de garagem:</strong> <%= @property.bathrooms %> </li>
+                <% end %>
+                <li><strong>Categoria :</strong> <%= @property.property_type.name %></li>
+                <li><strong>Location :</strong> <%= @property.district.name %>, <%= @property.district.city.name %> - <%= @property.district.city.state.uf %></li>
                 <li><strong>Floor Size :</strong> 2269 sq.m.</li>
               </ul>
               <p class="asking-price">
-                   <h2><span class="label label-default">Valor: R$259.000,00 </span></h2>
+                  <h2>
+                    <span class="label label-default">
+                      <% if @property.sell_price %>
+                        Valor: <%= number_to_currency(@property.sell_price) %>
+                      <% else %>
+                        Consulte o valor
+                      <% end %>
+                    </span>
+                  </h2>
                   </p>
               </div>
               
