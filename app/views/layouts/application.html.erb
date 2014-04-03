@@ -9,13 +9,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= initjs_tag 'Britoimoveis' %>
+    <%= render "shared/header"%>
 
-  <%= render "shared/header"%>
+    <%= yield %>
 
-  <%= yield %>
+    <%= render "shared/footer"%>
 
-  <%= render "shared/footer"%>
+
 
 </body>
 </html>
