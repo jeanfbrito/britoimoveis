@@ -14,19 +14,16 @@
               <% @banner.each_with_index do |property, index|%>
                 <% if index < 1 %>
                   <div class="item active">
-                    <img src="<%= property.pictures.first.file.thumb('848x360#').url %>"></img>
-                    <div class="carousel-caption">
-                      <p>Sítio à venda em Rio da Ilha - Taquara</p>
-                    </div>
-                  </div>
+                    
                 <% else %> 
                   <div class="item">
+                    
+                <% end %>
                     <img src="<%= property.pictures.first.file.thumb('848x360#').url %>"></img>
                     <div class="carousel-caption">
                       <p>Sítio à venda em Rio da Ilha - Taquara</p>
                     </div>
                   </div>
-                <% end %>
               <% end %>
             <% end %>
           </div>
