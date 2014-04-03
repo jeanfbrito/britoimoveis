@@ -23,3 +23,12 @@ body {
   display: block;
   color: #E3E3E3;
 }
+
+.index-footer{
+  border-top: 3px solid black;
+  background: url('/assets/low_contrast_linen.png');
+  background-color: #313131;
+  border-bottom: 1px solid #313131;
+  display: block;
+  color: #E3E3E3;
+}
