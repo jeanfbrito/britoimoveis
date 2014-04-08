@@ -21,7 +21,7 @@
                 <% end %>
                     <img src="<%= property.pictures.first.file.thumb('848x360#').url %>"></img>
                     <div class="carousel-caption">
-                      <p>Sítio à venda em Rio da Ilha - Taquara</p>
+                      <p><%= property.property_type.name %> para <%= property.business_type.name %> em <%= property.district.name %> - <%= property.district.city.name %></p>
                     </div>
                   </div>
               <% end %>
@@ -109,8 +109,9 @@
         <a href="<%= property_url(property) %>" >
           <img src="<%= property.pictures.first.file.thumb('253x190#').url %>" class="img-responsive thumbnail" alt="Responsive image">
         </a>
-        <h4>Rio da Ilha - Taquara</h4>
-        <h4>R$ 1.300.000,00</h4>
+        <h5><%= property.property_type.name %> para <%= property.business_type.name %></h5>
+        <h4><%= property.district.name %> - <%= property.district.city.name %></h4>
+
         <p>15 héctares</p>
         <p><a class="btn btn-primary" href="<%= property_url(property) %>" role="button">Mais detalhes »</a></p>
       </div>

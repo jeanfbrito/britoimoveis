@@ -25,6 +25,7 @@ body {
 }
 
 .index-footer{
+  margin-top: 25px;
   border-top: 3px solid black;
   background: url('/assets/low_contrast_linen.png');
   background-color: #313131;
