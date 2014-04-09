@@ -77,3 +77,6 @@ gem 'bootstrap-kaminari-views'
 
 gem "rails-i18n", "~> 4.0.0"
 
+gem "pry"
+gem "pry-nav"
+

@@ -113,8 +113,7 @@
         </a>
         <h5><%= property.property_type.name %> para <%= property.business_type.name %></h5>
         <h4><%= property.district.name %> - <%= property.district.city.name %></h4>
-
-        <p>15 héctares</p>
+        <p><%= calculate_area(property.terrain_area) %></p>
         <p><a class="btn btn-primary" href="<%= property_url(property) %>" role="button">Mais detalhes »</a></p>
       </div>
       <% end %>
