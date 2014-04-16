@@ -97,7 +97,7 @@
             <br>
             <b> Valor: </b>
             <% if property.sell_price %>
-            <%= property.sell_price %>
+            <%= number_to_currency(property.sell_price) %>
             <% else %>
             Consulte
             <% end %>
