@@ -1,12 +1,20 @@
 class PropertiesController < ApplicationController
-  def index
+  #def index
     #@search = Property.search(params[:q])
     #@properties = @search.result
-    @properties = Property.all.page params[:page]
+    #@properties = Property.all.page params[:page]
 
     #@properties = Property.all
-    respond_to do |format|
-      format.html # index.html.erb
+    #respond_to do |format|
+      #format.html # index.html.erb
+    #end
+  #end
+
+  def index
+    if params[:search]
+      @properties = Property.search(params[:search]).page(params[:page])
+    else
+      @properties = Property.all.page params[:page]
     end
   end
 
@@ -20,4 +28,6 @@ class PropertiesController < ApplicationController
       #format.json { render json: @property }
     end
   end
+
+  
 end
