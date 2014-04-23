@@ -37,11 +37,13 @@
               
               <!-- about property --> 
               <div class="row-fluid property-info">
-                  <h4>Sobre:</h4>
+                  <% unless @property.description.nil? || @property.description.length < 1  %>
+                    <h4>Sobre:</h4>
                   
-                  <p class="description">
-                    <%= @property.description %>
-                  </p>
+                    <p class="description">
+                      <%= @property.description %>
+                    </p>
+                  <% end %>
                   
               </div>
               <!-- end about property --> 
