@@ -11,8 +11,8 @@ class PropertiesController < ApplicationController
   #end
 
   def index
-    if params[:search]
-      @properties = Property.search(params[:search]).page(params[:page])
+    if params[:search_code]
+      @properties = Property.search_code(params[:search_code]).page(params[:page])
     else
       @properties = Property.all.page params[:page]
     end

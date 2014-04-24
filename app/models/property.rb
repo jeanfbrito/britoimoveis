@@ -31,8 +31,8 @@ class Property < ActiveRecord::Base
     false
   end
 
-  def self.search(query)
-    where("id like ?", "%#{query}%") 
+  def self.search_code(id)
+    where("id like ?", "%#{id}%") 
   end
 
 end
