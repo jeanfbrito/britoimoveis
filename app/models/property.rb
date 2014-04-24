@@ -35,5 +35,11 @@ class Property < ActiveRecord::Base
     where("id like ?", "%#{id}%") 
   end
 
+  def self.search(bedrooms, property_type_id) 
+    #return scoped unless district.present? || property_type.present?
+    where(['bedrooms LIKE ? OR property_type_id LIKE ?', "%#{bedrooms}%", "%#{property_type_id}%"])
+    binding.pry
+  end
+
 end
 
