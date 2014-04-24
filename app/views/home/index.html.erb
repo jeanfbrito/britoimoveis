@@ -38,63 +38,8 @@
         </div>
       </div>
       <div class="col-lg-3 col-md-3">
-      <form role="form">
         <h3>Pesquise aqui:</h3>
-        <div class="form-group">
-          <select class="form-control">
-            <option>Escolha a Cidade</option>
-            <option>Taquara</option>
-            <option>Igrejinha</option>
-            <option>Parobé</option>
-            <option>Rolante</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <select class="form-control">
-            <option>Escolha o Bairro</option>
-            <option>Santa Rosa</option>
-            <option>Rio da Ilha</option>
-            <option>Padilha</option>
-            <option>Centro</option>
-          </select>
-        </div>
-        <div class="row">
-          <div class="col-xs-6 col-sm-6 col-md-6">
-            <div class="form-group">
-              <select class="form-control" name="quartos">
-                <option value="indiferente">Quartos</option>
-                <option value="1">1 quarto</option>
-                <option value="2">2 quartos</option>
-                <option value="3">3 quartos</option>
-                <option value="4">4 quartos</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-xs-6 col-sm-6 col-md-6">
-            <div class="form-group">
-              <select class="form-control" name="vagas">
-                <option value="indiferente">Garagem</option>
-                <option value="1">1 vaga</option>
-                <option value="2">2 vagas</option>
-                <option value="3">3 vagas</option>
-                <option value="4">4 vagas</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <select class="form-control" name="tipo">
-            <option value="indiferente">Escolha o tipo do imóvel</option>
-            <option value="3">Apartamento</option>
-            <option value="4">Casa</option>
-            <option value="6">Cobertura</option>
-            <option value="7">Escritório</option>
-          </select>
-        </div>
-        <div class="row">
-          <div class="col-xs-6 col-md-6"><input type="submit" value="Pesquisar" class="btn btn-success btn-block btn-lg" tabindex="7"></div>
-        </div>
-      </form>
+        <%= render "shared/search"%>
     </div>
     </div>
   </div>
