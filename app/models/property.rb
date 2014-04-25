@@ -35,10 +35,19 @@ class Property < ActiveRecord::Base
     where("id like ?", "%#{id}%") 
   end
 
-  def self.search(bedrooms, property_type_id) 
-    #return scoped unless district.present? || property_type.present?
-    where(['bedrooms LIKE ? OR property_type_id LIKE ?', "%#{bedrooms}%", "%#{property_type_id}%"])
-    binding.pry
+  def self.search(district_id_p, bedrooms_p, garages_p, property_type_id_p) 
+    where do
+      [
+        district_id_p.presence && properties.district_id == "#{district_id_p}",
+        bedrooms_p.presence && properties.bedrooms == "%#{bedrooms_p}",
+        garages_p.presence && properties.garages == "#{garages_p}",
+        property_type_id_p.presence && properties.property_type_id == "#{property_type_id_p}"
+      ].compact.reduce(:&)
+      # compact to remove the nils, reduce to combine the cases with |
+    end
+
+    
+    #binding.pry
   end
 
 end
