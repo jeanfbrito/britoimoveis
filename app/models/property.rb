@@ -1,5 +1,10 @@
 class Property < ActiveRecord::Base
 
+  scope :district_id, -> (district_id) { where district_id: district_id }
+  scope :bedrooms, -> (bedrooms) { where bedrooms: bedrooms }
+  scope :garages, -> (garages) { where garages: garages }
+  scope :business_type, -> (business_type) { where business_type: business_type }
+
   has_many :pictures, -> { order("position ASC") }
   belongs_to :district
   belongs_to :property_type

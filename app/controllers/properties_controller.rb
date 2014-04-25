@@ -1,24 +1,13 @@
 class PropertiesController < ApplicationController
-  #def index
-    #@search = Property.search(params[:q])
-    #@properties = @search.result
-    #@properties = Property.all.page params[:page]
-
-    #@properties = Property.all
-    #respond_to do |format|
-      #format.html # index.html.erb
-    #end
-  #end
 
   def index
+    @properties = Property.where(nil).page(params[:page]) # creates an anonymous scope
     if params[:search]
-      @properties = Property.search(params[:search][:district_id], params[:search][:bedrooms], params[:search][:garages], params[:search][:property_type_id]).page(params[:page])
-    elsif params[:search_code]
-      @properties = Property.search_code(params[:search_code]).page(params[:page])
-    else
-      @properties = Property.all.page params[:page]
+      @properties = @properties.district_id(params[:search][:district_id]) if params[:search][:district_id].present?
+      @properties = @properties.bedrooms(params[:search][:bedrooms]) if params[:search][:bedrooms].present?
+      @properties = @properties.garages(params[:search][:garages]) if params[:search][:garages].present?
+      @properties = @properties.property_type_id(params[:search][:property_type_id]) if params[:search][:property_type_id].present?
     end
-    #binding.pry
   end
 
   def show
