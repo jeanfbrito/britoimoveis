@@ -2,6 +2,10 @@ Britoimoveis::Application.routes.draw do
   resources :properties, :only => [:index, :show]
   resources :contact_messages, only: [:new, :create]
 
+  resources :cities do
+    resources  :districts
+  end
+
   namespace :admin do
     resources :properties do
       resources :pictures do
