@@ -18,4 +18,20 @@ $(document).ready(function(){
     }
   });
 });
+  $("#value_slider").ionRangeSlider({
+    min: 0,
+    max: 350000,
+    type: 'double',
+    step: 10000,
+    prefix: "R$",
+    maxPostfix: "+",
+    prettify: true,
+    hasGrid: true,
+    onChange: function(obj) {
+        //console.log(obj.fromNumber);
+        $('#search_value_min').val(obj.fromNumber);
+        $('#search_value_max').val(obj.toNumber);
+
+    }
+  });
 });
