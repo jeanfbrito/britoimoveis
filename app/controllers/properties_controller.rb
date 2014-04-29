@@ -1,5 +1,7 @@
 class PropertiesController < ApplicationController
 
+  SERCH_MAX_VALUE = '350000'
+
   def index
     @properties = Property.where(nil).page(params[:page]) # creates an anonymous scope
     if params[:search]   
@@ -8,6 +10,11 @@ class PropertiesController < ApplicationController
         @properties = city.properties.page(params[:page])
         @properties = @properties.district_id(params[:search][:district_id]) if params[:search][:district_id].present?
       end
+      @properties = @properties.where("sell_price >= #{params[:search][:value_min]}") if params[:search][:value_min].present?
+      unless params[:search][:value_max] == SERCH_MAX_VALUE
+        @properties = @properties.where("sell_price <= #{params[:search][:value_max]}") if params[:search][:value_max].present?
+      end
+      #@properties = @properties.where(:sell_price >= params[:search][:value_max]) if params[:search][:value_max].present?
       @properties = @properties.bedrooms(params[:search][:bedrooms]) if params[:search][:bedrooms].present?
       @properties = @properties.garages(params[:search][:garages]) if params[:search][:garages].present?
       @properties = @properties.property_type_id(params[:search][:property_type_id]) if params[:search][:property_type_id].present?

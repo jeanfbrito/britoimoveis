@@ -26,7 +26,7 @@ $(document).ready(function(){
     prefix: "R$",
     maxPostfix: "+",
     prettify: true,
-    hasGrid: true,
+    hasGrid: false,
     onChange: function(obj) {
         //console.log(obj.fromNumber);
         $('#search_value_min').val(obj.fromNumber);

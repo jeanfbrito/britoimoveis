@@ -33,3 +33,8 @@ body {
   display: block;
   color: #E3E3E3;
 }
+
+.irs-from, .irs-to, .irs-single {
+font-size: 15px;
+}
+
