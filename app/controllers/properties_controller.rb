@@ -22,6 +22,8 @@ class PropertiesController < ApplicationController
   end
 
   def show
+    @contact_message = ContactMessage.new
+
     @property = Property.find(params[:id])
     @pictures = @property.pictures.order("position")
 
