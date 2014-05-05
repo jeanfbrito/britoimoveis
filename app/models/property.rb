@@ -7,7 +7,7 @@ class Property < ActiveRecord::Base
 
   validates :district, :property_type, :business_type, presence: true
 
-  #scope :city_id, -> (city_id) { where city_id: city_id }
+  scope :id, -> (id) { where id: id }
   scope :district_id, -> (district_id) { where district_id: district_id }
   scope :bedrooms, -> (bedrooms) { where bedrooms: bedrooms }
   scope :garages, -> (garages) { where garages: garages }
@@ -37,24 +37,24 @@ class Property < ActiveRecord::Base
     false
   end
 
-  def self.search_code(id)
-    where("id like ?", "%#{id}%") 
-  end
+  # def self.search_code(id)
+  #   where("id like ?", "%#{id}%") 
+  # end
 
-  def self.search(district_id_p, bedrooms_p, garages_p, property_type_id_p) 
-    where do
-      [
-        district_id_p.presence && properties.district_id == "#{district_id_p}",
-        bedrooms_p.presence && properties.bedrooms == "%#{bedrooms_p}",
-        garages_p.presence && properties.garages == "#{garages_p}",
-        property_type_id_p.presence && properties.property_type_id == "#{property_type_id_p}"
-      ].compact.reduce(:&)
-      # compact to remove the nils, reduce to combine the cases with |
-    end
+  # def self.search(district_id_p, bedrooms_p, garages_p, property_type_id_p) 
+  #   where do
+  #     [
+  #       district_id_p.presence && properties.district_id == "#{district_id_p}",
+  #       bedrooms_p.presence && properties.bedrooms == "%#{bedrooms_p}",
+  #       garages_p.presence && properties.garages == "#{garages_p}",
+  #       property_type_id_p.presence && properties.property_type_id == "#{property_type_id_p}"
+  #     ].compact.reduce(:&)
+  #     # compact to remove the nils, reduce to combine the cases with |
+  #   end
 
     
-    #binding.pry
-  end
+  #   #binding.pry
+  # end
 
 end
 
