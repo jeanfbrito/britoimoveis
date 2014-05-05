@@ -32,8 +32,8 @@ module Britoimoveis
       :address              => "smtp.gmail.com",
       :port                 => 587,
       :domain               => "gmail.com",
-      :user_name            => "jeanfbrito@gmail.com",
-      :password             => "Jean1989.",
+      :user_name            => "contatobritoimoveis@gmail.com",
+      :password             => "contato2014",
       :authentication       => :plain,
       :enable_starttls_auto => true
     }
