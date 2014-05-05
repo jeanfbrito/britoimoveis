@@ -23,6 +23,10 @@ class PropertiesController < ApplicationController
       @properties = @properties.garages(params[:search][:garages]) if params[:search][:garages].present?
       @properties = @properties.property_type_id(params[:search][:property_type_id]) if params[:search][:property_type_id].present?
     end
+    if params[:search_code]
+      binding.pry
+      @properties = @properties.id(params[:search_code][:reference_code]) if params[:search_code][:reference_code].present?
+    end
   end
 
   def show
