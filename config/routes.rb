@@ -2,6 +2,9 @@ Britoimoveis::Application.routes.draw do
   resources :properties, :only => [:index, :show]
   resources :contact_messages, only: [:new, :create]
 
+  #match 'contact_messages' => 'contact_messages#new', :as => 'contato', :via => :get
+  #match 'contact_messages' => 'contact_messages#create', :as => 'contato', :via => :post
+
   resources :cities do
     resources  :districts
   end
