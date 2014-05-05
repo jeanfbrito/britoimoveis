@@ -1,5 +1,6 @@
 class PropertiesController < ApplicationController
 
+  SERCH_MIN_VALUE = '0'
   SERCH_MAX_VALUE = '350000'
 
   def index
@@ -9,8 +10,11 @@ class PropertiesController < ApplicationController
         city = City.find(params[:search][:city_id]) #porque diabos nao funciona com where? city = City.where(id: params[:search][:city_id]) #porque diabos nao funciona com where?
         @properties = city.properties.page(params[:page])
         @properties = @properties.district_id(params[:search][:district_id]) if params[:search][:district_id].present?
+        binding.pry
       end
-      @properties = @properties.where("sell_price >= #{params[:search][:value_min]}") if params[:search][:value_min].present?
+      unless params[:search][:value_max] == SERCH_MIN_VALUE
+        @properties = @properties.where("sell_price >= #{params[:search][:value_min]}") if params[:search][:value_min].present?
+      end
       unless params[:search][:value_max] == SERCH_MAX_VALUE
         @properties = @properties.where("sell_price <= #{params[:search][:value_max]}") if params[:search][:value_max].present?
       end
