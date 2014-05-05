@@ -13,7 +13,7 @@ $(document).ready(function(){
       for (var i = 0; i < data.length; i++) {
         options += '<option value="' + data[i].id + '">' + data[i].name + '</option>';
       }     
-      subcategory_select.html("<option selected=selected>Escolha o Bairro</option>" + options);
+      subcategory_select.html("<option selected=selected value=''>Escolha o Bairro</option>" + options);
       console.log(options);
     }
   });
