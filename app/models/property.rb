@@ -11,7 +11,7 @@ class Property < ActiveRecord::Base
   scope :district_id, -> (district_id) { where district_id: district_id }
   scope :bedrooms, -> (bedrooms) { where bedrooms: bedrooms }
   scope :garages, -> (garages) { where garages: garages }
-  scope :business_type, -> (business_type) { where business_type: business_type }
+  scope :property_type_id, -> (property_type_id) { where property_type_id: property_type_id }
 
   after_initialize do
     if self.new_record?
