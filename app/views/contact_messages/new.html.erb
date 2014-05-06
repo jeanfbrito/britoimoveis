@@ -1,44 +1,56 @@
-<% flash.each do |key, value| %>
-        <div class="<%= flash_class(key) %>">
-              <%= value %>
-        </div>
-  <% end %>
-  
-<div id="message"></div>
-  <%= simple_form_for @contact_message, :html => {:class => 'form-horizontal' } do |f| %>
-
-    <div class="row">
-      <h3>Contato sobre este imóvel:</h3>
+<div class="container">
+  <div class="col-lg-12 col-md-12">
+    <div class="col-lg-3 col-md-3">
     </div>
+    <div class="col-lg-6 col-md-6">
+      <% flash.each do |key, value| %>
+              <div class="<%= flash_class(key) %>">
+                    <%= value %>
+              </div>
+        <% end %>
+        
+      <div id="message"></div>
+        <%= simple_form_for @contact_message, :html => {:class => 'form-horizontal' } do |f| %>
 
-    <div class="form-group">
-      <%= f.input_field :name, :placeholder => "Nome" %>
-    </div>
-    <div class="form-group">
-      <%= f.input_field :city, :placeholder => "Cidade" %>
-    </div>
+        <h2> Entre em contato conosco: </h2>
 
-    <div class="row">
-      <div class="col-xs-4 col-sm-4 col-md-4">
-        <div class="form-group">
-        <%= f.input_field :phone, :placeholder => "Telefone" %>
-        </div>
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <div class="form-group">
+                <%= f.input_field :name, :placeholder => "Nome" %>
+              </div>  
+            </div> 
+            <div class="col-sm-offset-1 col-xs-5 col-sm-5 col-md-5"> 
+              <div class="form-group">
+                <%= f.input_field :city, :placeholder => "Cidade" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+              <div class="form-group">
+              <%= f.input_field :email, :placeholder => "Email" %>
+              </div>
+            </div>
+
+            <div class="col-sm-offset-1 col-xs-5 col-sm-5 col-md-5"> 
+              <div class="form-group">
+              <%= f.input_field :phone, :placeholder => "Telefone" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.input_field :message, :as => :text, :rows => 4, :placeholder => "Escreva sua mensagem aqui" %>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-md-6">
+              <input type="submit" value="Enviar contato" class="btn btn-success btn-block btn-lg" tabindex="5">
+            </div>
+          </div>
+        <% end %>
       </div>
-
-      <div class="col-sm-offset-1 col-xs-7 col-sm-7 col-md-7"> 
-        <div class="form-group">
-        <%= f.input_field :email, :placeholder => "Email" %>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <%= f.input_field :message, :as => :text, :rows => 4, :placeholder => "Escreva sua mensagem aqui" %>
-    </div>
-    <div class="row">
-      <div class="col-xs-6 col-md-6">
-        <input type="submit" value="Enviar contato" class="btn btn-success btn-block btn-lg" tabindex="5">
-      </div>
-    </div>
-  <% end %>
+</div>
+</div>
 </div>
