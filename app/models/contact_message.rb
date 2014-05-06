@@ -2,6 +2,8 @@ class ContactMessage < ActiveRecord::Base
 
   belongs_to :property
 
+  validates :name, :phone, :city, :email, :message, presence: true
+
 end
 
 # class Contact < MailForm::Base
