@@ -10,7 +10,6 @@ class PropertiesController < ApplicationController
         city = City.find(params[:search][:city_id]) #porque diabos nao funciona com where? city = City.where(id: params[:search][:city_id]) #porque diabos nao funciona com where?
         @properties = city.properties.page(params[:page])
         @properties = @properties.district_id(params[:search][:district_id]) if params[:search][:district_id].present?
-        binding.pry
       end
       unless params[:search][:value_max] == SERCH_MIN_VALUE
         @properties = @properties.where("sell_price >= #{params[:search][:value_min]}") if params[:search][:value_min].present?
@@ -24,7 +23,6 @@ class PropertiesController < ApplicationController
       @properties = @properties.property_type_id(params[:search][:property_type_id]) if params[:search][:property_type_id].present?
     end
     if params[:search_code]
-      binding.pry
       @properties = @properties.id(params[:search_code][:reference_code]) if params[:search_code][:reference_code].present?
     end
   end
