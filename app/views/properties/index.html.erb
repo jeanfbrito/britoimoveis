@@ -43,7 +43,9 @@
             <% end %>
             <br>
             <br>
-            <b> Descrição: </b><%= property.description.truncate(300) %>
+            <% unless property.description.nil? || property.description.length < 1  %>
+              <b> Descrição: </b><%= property.description.truncate(300) %>
+            <% end %>
           </div>
         </div>
         <% end %>
