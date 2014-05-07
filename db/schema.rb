@@ -95,15 +95,6 @@ ActiveRecord::Schema.define(version: 20140430062109) do
     t.datetime "updated_at"
   end
 
-  create_table "searches", force: true do |t|
-    t.string   "keywords"
-    t.integer  "property_type_id"
-    t.decimal  "min_price"
-    t.decimal  "max_price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "states", force: true do |t|
     t.string   "name"
     t.string   "uf"

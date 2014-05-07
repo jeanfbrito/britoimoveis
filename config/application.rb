@@ -26,7 +26,9 @@ module Britoimoveis
     config.encoding = "utf-8"
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
-    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.paths << Rails.root.join("app", "assets", "fonts", "website", "admin")
+    config.assets.precompile += ["application-admin.css", "application-admin.css","application-website.css", "application-website.css"] 
+
 
     config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",
