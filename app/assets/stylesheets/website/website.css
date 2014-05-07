@@ -24,17 +24,29 @@ body {
   color: #E3E3E3;
 }
 
-.index-footer{
+.footer{
   margin-top: 25px;
   border-top: 3px solid black;
   background: url('/assets/low_contrast_linen.png');
   background-color: #313131;
-  border-bottom: 1px solid #313131;
-  display: block;
   color: #E3E3E3;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 40px;
 }
 
 .irs-from, .irs-to, .irs-single {
 font-size: 15px;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 40px;
+}
