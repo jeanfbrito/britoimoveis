@@ -48,7 +48,8 @@ end
 gem 'unicorn'
 
 # Deploy with Capistrano
-gem 'capistrano'
+gem 'capistrano', '~> 2.15.5'
+gem 'rvm-capistrano'
 
 # Use Bootstrap for themes
 gem "bootstrap-sass"
