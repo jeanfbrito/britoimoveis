@@ -105,6 +105,7 @@ GEM
     net-ssh (2.9.0)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
+    pg (0.17.0)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.4)
@@ -206,6 +207,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   kaminari
+  pg
   pry
   pry-nav
   rack-cache

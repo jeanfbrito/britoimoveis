@@ -47,6 +47,8 @@ end
 # Use unicorn as the app server
 gem 'unicorn'
 
+gem 'pg'
+
 # Deploy with Capistrano
 gem 'capistrano', '~> 2.15.5'
 gem 'rvm-capistrano'
