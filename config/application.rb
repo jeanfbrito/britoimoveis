@@ -27,7 +27,7 @@ module Britoimoveis
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     config.assets.paths << Rails.root.join("app", "assets", "fonts", "website", "admin")
-    config.assets.precompile += ["application-admin.css", "application-admin.css","application-website.css", "application-website.css"] 
+    config.assets.precompile += ["application-admin.css", "application-admin.js","application-website.css", "application-website.js"] 
 
 
     config.action_mailer.smtp_settings = {
