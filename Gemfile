@@ -44,6 +44,12 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Use unicorn as the app server
+gem 'unicorn'
+
+# Deploy with Capistrano
+gem 'capistrano'
+
 # Use Bootstrap for themes
 gem "bootstrap-sass"
 
