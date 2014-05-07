@@ -14,10 +14,10 @@
   border-bottom: 1px solid #959595;
 }
 body {
-  background: url('/assets/whitey.png');
+  background: url(<%= asset_path 'whitey.png' %>);
 }
 .index-header{
-  background: url('/assets/low_contrast_linen.png');
+  background: url(<%= asset_path 'low_contrast_linen.png' %>);
   background-color: #313131;
   border-bottom: 1px solid #313131;
   display: block;
@@ -27,7 +27,7 @@ body {
 .footer{
   margin-top: 25px;
   border-top: 3px solid black;
-  background: url('/assets/low_contrast_linen.png');
+  background: url(<%= asset_path 'low_contrast_linen.png' %>);
   background-color: #313131;
   color: #E3E3E3;
   position: absolute;
