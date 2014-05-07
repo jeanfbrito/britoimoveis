@@ -19,6 +19,24 @@ ssh_options[:forward_agent] = true
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
+namespace :db do 
+      
+    desc "Seed the database on already deployed code"
+    task :seed, :only => {:primary => true}, :except => { :no_release => true } do
+      run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake db:seed"
+    end     
+  
+    desc "Setup application schema"
+    task :setup do
+      run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake db:create"  
+    end
+    
+    desc "Wipe tables then rerun all migrations and seed database"
+    task :remigrate, :only => {:primary => true}, :except => { :no_release => true } do
+      run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake db:remigrate"
+    end    
+end
+
 namespace :deploy do
   %w[start stop restart].each do |command|
     desc "#{command} unicorn server"
