@@ -1,4 +1,4 @@
-<%= simple_form_for :search_code, :url => properties_path,html: { class: "navbar-form navbar-left" }, :method => :get do |f| %>
+<%= simple_form_for :search_code, :url => properties_path,html: { class: "" }, :method => :get do |f| %>
   <%= f.input_field :reference_code, placeholder: "Código de referência"%>
   <%= submit_tag "Buscar", :name => nil, :class => 'btn btn-success' %>
 <% end %>

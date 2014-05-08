@@ -33,32 +33,26 @@
 
 <div class="navbar navbar-inverse navbar-static-top">
   <div class="container">
-  <!-- <a class="navbar-brand" href="/">          
-  Differential          
-  </a> -->
-  <ul class="nav navbar-nav pull-left visible-lg">
-    <li class="active"><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
-    <li class=""><a href="<%= properties_url %>">Imóveis</a></li>
-    <li class=""><a href="/sobrenos">Sobre nós</a></li>
-    <li class=""><a href="/contato">Contato</a></li>
-  </ul>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
 
-  <div class="nav navbar-nav pull-right">
-    <%= render "shared/search_code"%>
-  </div>
-
-    <a class="mobile-menu-trigger pull-right hidden-lg" href="#mobileNav"> <i class="icon-reorder"></i>
-    </a>
-
-    <div id="mobile-menu" style="display: none;">
-      <ul>
-        <li class=""><a href="/about">About</a></li>
-        <li class=""><a href="/companies">Companies</a></li>
-        <li class=""><a href="/team">Team</a></li>
-        <li class=""><a href="/blog">Blog</a></li>
-        <li class=""><a href="/connect">Jobs</a></li>
-        <li class=""><a href="/contact">Contact</a></li>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      <li class="active"><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
+      <li class=""><a href="<%= properties_url %>">Imóveis</a></li>
+      <li class=""><a href="/sobrenos">Sobre nós</a></li>
+      <li class=""><a href="/contato">Contato</a></li>
       </ul>
+      <div class="navbar-form navbar-right">
+        <%= render "shared/search_code"%>
+      </div>
     </div>
 
   </div>
