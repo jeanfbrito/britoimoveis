@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140430062109) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "business_types", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -87,7 +90,7 @@ ActiveRecord::Schema.define(version: 20140430062109) do
     t.integer  "business_type_id"
   end
 
-  add_index "properties", ["sell_price"], name: "index_properties_on_sell_price"
+  add_index "properties", ["sell_price"], name: "index_properties_on_sell_price", using: :btree
 
   create_table "property_types", force: true do |t|
     t.string   "name"
