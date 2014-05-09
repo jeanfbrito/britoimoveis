@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $(window).on("resize", methodToFixionSlider);
   $('#search_city_id').change(function() {
   var subcategory_url = "/cities/" + $(this).val() + "/districts.json";
   var subcategory_select = $('#search_district_id');
@@ -35,3 +36,7 @@ $(document).ready(function(){
     }
   });
 });
+function methodToFixionSlider( e ) {
+  $("#value_slider").ionRangeSlider("update");
+  console.log("fix")
+}
