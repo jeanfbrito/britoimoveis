@@ -25,8 +25,8 @@ pt-BR:
     pagination:
       first: "&laquo; First"
       last: "Last &raquo;"
-      previous: "&lsaquo;&lsaquo;&lsaquo; Anterior"
-      next: "Próximo &rsaquo;&rsaquo;&rsaquo;"
+      previous: "Anterior"
+      next: "Próximo"
       truncate: "&hellip;"
   helpers:
     page_entries_info:
