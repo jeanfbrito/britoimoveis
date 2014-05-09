@@ -20,6 +20,7 @@ class Property < ActiveRecord::Base
       self.bathrooms = 0
       self.suits = 0
       self.garages = 0
+      self.sell_price = 0
     end
   end
 
