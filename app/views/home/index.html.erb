@@ -22,7 +22,7 @@
                     <a href="<%= property_url(property) %>" >
                       <img src="<%= property.pictures.first.file.thumb('848x360#').url %>"></img>
                     </a>
-                    <div class="carousel-caption">
+                    <div class="carousel-caption hidden-xs">
                       <p><%= property.property_type.name %> para <%= property.business_type.name %> em <%= property.district.name %> - <%= property.district.city.name %></p>
                     </div>
                   </div>
