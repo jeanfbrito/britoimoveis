@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $('#properties_select_order').bind('change', function() { window.location = $(this).val() });
   $(window).on("resize", methodToFixionSlider);
   $('#search_city_id').change(function() {
   var subcategory_url = "/cities/" + $(this).val() + "/districts.json";

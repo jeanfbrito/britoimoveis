@@ -26,6 +26,7 @@ class PropertiesController < ApplicationController
       @properties = @properties.id(params[:search_code][:reference_code]) if params[:search_code][:reference_code].present?
     end
     @properties = @properties.order("id")
+    @properties = @properties.order(params[:sort]+ " " + params[:direction]) if params[:sort].present?
   end
 
   def show

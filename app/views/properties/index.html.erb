@@ -10,11 +10,15 @@
           <div class="col-lg-3 pull-right">
             <form role="form">
               <div class="form-group">
-                <select class="form-control">
+                <select id="properties_select_order" class="form-control">
                   <option>Ordenar por</option>
-                  <option>Menor Valor</option>
-                  <option>Maior Valor</option>
-                  <option>Maior area</option>
+                  <option value="<%= properties_path(request.parameters.merge({:sort => "sell_price", :direction => "asc"})) %>">
+                    Menor valor
+                  </option>
+                  <option value="<%= properties_path(request.parameters.merge({:sort => "sell_price", :direction => "desc"})) %>">
+                    Maior valor
+                  </option>
+                  <option>Maior area</option> 
                   <option>Menor area</option>
                 </select>
               </div>
