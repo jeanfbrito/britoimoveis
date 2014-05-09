@@ -43,7 +43,7 @@
             <%= property.district.name %>, <%= property.district.city.name %> - <%= property.district.city.state.uf %>
             <br>
             <b> Valor: </b>
-            <% if property.sell_price %>
+            <% if property.sell_price > 0%>
             <%= number_to_currency(property.sell_price) %>
             <% else %>
             Consulte
