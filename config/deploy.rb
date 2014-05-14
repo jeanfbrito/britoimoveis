@@ -1,7 +1,9 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
 
-server "208.68.38.246", :web, :app, :db, primary: true
+# replace these with your server's information
+set :domain,  "britoimoveis.net"
+server "#{domain}", :web, :app, :db, primary: true
 
 set :application, "britoimoveis"
 set :user, "deployer"
