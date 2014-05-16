@@ -4,6 +4,7 @@ class Property < ActiveRecord::Base
   belongs_to :district
   belongs_to :property_type
   belongs_to :business_type
+  has_one :highlighted_property
 
   validates :district, :property_type, :business_type, presence: true
 
