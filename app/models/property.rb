@@ -21,6 +21,7 @@ class Property < ActiveRecord::Base
       self.suits = 0
       self.garages = 0
       self.sell_price = 0
+      self.on_website = true
     end
   end
 

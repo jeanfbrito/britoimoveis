@@ -81,7 +81,9 @@ class Admin::PropertiesController < InheritedResources::Base
                                         :sell_price,
                                         :client_price,
                                         :property_type_id,
-                                        :business_type_id)
+                                        :business_type_id,
+                                        :on_tablet,
+                                        :on_website)
     end
 
 end

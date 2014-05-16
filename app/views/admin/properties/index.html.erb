@@ -33,192 +33,57 @@
         <div id="properties">
             <table class="table col-lg-12 col-md-12 col-sm-12">
                 <tbody>
+                    <% @properties.each do |property| %>
                     <tr>
-                        <td>
-                            <i class="fa fa-2x fa-star" data-toggle="tooltip" title="Imóvel em destaque"></i>
-                            <i class=" fa fa-2x fa-globe" data-toggle="tooltip" title="Disponivel no website"></i>
-                            <i class=" fa fa-2x fa-tablet" style="color: rgb(211, 211, 211);"data-toggle="tooltip" title="Não está disponivel no catálogo móvel"></i>
+                        <td class="">
+                            <% if property.on_tablet %>
+                                <i class=" fa fa-2x fa-star stat-icon" data-toggle="tooltip" data-placement="right" title="Imóvel em destaque"></i>
+                            <% else %>
+                                <i class=" fa fa-2x fa-star not-published stat-icon" data-toggle="tooltip" data-placement="right" title="Não esta em destaque"></i>
+                            <% end %>
+                            <% if property.on_tablet %>
+                                <i class=" fa fa-2x fa-tablet stat-icon" data-toggle="tooltip" data-placement="right" title="Disponivel no catálogo móvel"></i>
+                            <% else %>
+                                <i class=" fa fa-2x fa-tablet not-published stat-icon" data-toggle="tooltip" data-placement="right" title="Não está disponivel no catálogo móvel"></i>
+                            <% end %>
+                            <% if property.on_website %>  
+                                <i class=" fa fa-2x fa-globe stat-icon" data-toggle="tooltip" data-placement="right" title="Disponivel no website"></i>
+                            <% else %>
+                                <i class=" fa fa-2x fa-globe not-published stat-icon" data-toggle="tooltip" data-placement="right" title="Não esta disponivel no website"></i>
+                            <% end %>
                         </td>
                         <td class="col-lg-2 col-md-3 col-sm-3 col-xs-3">
-                            <img class="img-responsive" src="http://britoimoveis.net/sitios/1.jpg" alt="">
+                            <a href="<%= property_url(property) %>">
+                              <img class="img-responsive" src="<%= property.pictures.first.file.thumb('253x190#').url %>" alt="..."></img>
+                            </a>
                         </td>
                         <td>
                             <b>
-                                Ref: 00128
+                                Ref: <%= property.id %>
                             </b>
                             <br>
                             <b> Proprietário: </b>
                             Jean Brito, Carolina Pohren
                             <br>
-                            <b> Casa para Aluguel </b>
+                                <b> <%= property.property_type.name %> para <%= property.business_type.name %> </b>
                             <br>
                             <b> Localidade: </b>
-                            Centro, Taquara - RS
+                            <%= property.district.name %>, <%= property.district.city.name %> - <%= property.district.city.state.uf %>
                             <br>
                             <b> Valor: </b>
-                            R$ 1.000.000,00
+                            <% if property.sell_price > 0%>
+                                <%= number_to_currency(property.sell_price) %>
+                            <% else %>
+                                Indefinido
+                            <% end %>
                         </td>
                         <td>
-                            <a href="#" class="btn btn-primary"> Abrir Imóvel</a>
-                            <a href="#" class="btn btn-default">
+                            <a href="<%= property_url(property) %>" class="btn btn-primary"> Abrir Imóvel</a>
+                            <a href="<%= edit_admin_property_url(property) %>" class="btn btn-default">
                                 <i class="fa fa-edit"></i> Editar</a>                
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <i class="fa fa-2x fa-star" style="color: rgb(211, 211, 211);"data-toggle="tooltip" title="Imóvel não está em destaque"></i>
-                            <i class="fa fa-2x fa-globe" data-toggle="tooltip" title="Disponivel no website"></i>
-                            <i class="fa fa-2x fa-tablet" data-toggle="tooltip" title="Disponivel no catálogo móvel"></i>
-                        </td>
-                        <td>
-                            <img class="img-responsive" src="http://britoimoveis.net/sitios/2.jpg" alt="ALT NAME">
-                        </td>
-                        <td>
-                            <b>
-                                Ref: 00256
-                            </b>
-                            <br>
-                            <b> Proprietário: </b>
-                            Vitor Mateus de Brito
-                            <br>
-                            <b> Sítio para Venda </b>
-                            <br>
-                            <b> Localidade: </b>
-                            15 de Novembro, Igrejinha - RS
-                            <br>
-                            <b> Valor: </b>
-                            R$ 2.750.000,00
-                        </td>
-                        <td>
-                            <a href="#" class="btn btn-primary"> Abrir Imóvel</a>
-                            <a href="#" class="btn btn-default">
-                                <i class="fa fa-edit"></i> Editar</a>                
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <i class="fa fa-2x fa-star" style="color: rgb(211, 211, 211);" data-toggle="tooltip" title="Imóvel não está em destaque"></i>
-                            <i class="fa fa-2x fa-globe" style="color: rgb(211, 211, 211);" data-toggle="tooltip" title="Não está disponivel no website"></i>
-                            <i class="fa fa-2x fa-tablet" style="color: rgb(211, 211, 211);" data-toggle="tooltip" title="Não está disponivel no catálogo móvel"></i>
-                        </td>
-                        <td>
-                            <img class="img-responsive" src="http://britoimoveis.net/sitios/3.jpg" alt="ALT NAME">
-                        </td>
-                        <td>
-                            <b>
-                                Ref: 00512
-                            </b>
-                            <br>
-                            <b> Área para Venda </b>
-                            <br> 
-                            <b> Proprietário: </b>
-                            Jean Brito
-                            <br>
-                            <b> Localidade: </b>
-                            Jardim do Prado, Taquara - RS
-                            <br>
-                            <b> Valor: </b>
-                            R$ 1.000.000,00
-                        </td>
-                        <td>
-                            <a href="#" class="btn btn-primary"> Abrir Imóvel</a>
-                            <a href="#" class="btn btn-default">
-                                <i class="fa fa-edit"></i> Editar</a>                
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <i class="fa fa-2x fa-star" style="color: rgb(211, 211, 211);" data-toggle="tooltip" title="Imóvel não está em destaque"></i>
-                            <i class="fa fa-2x fa-globe" style="color: rgb(211, 211, 211);" data-toggle="tooltip" title="Não está disponivel no website"></i>
-                            <i class="fa fa-2x fa-tablet" style="color: rgb(211, 211, 211);" data-toggle="tooltip" title="Não está disponivel no catálogo móvel"></i>
-                        </td>
-                        <td>
-                            <img class="img-responsive" src="http://britoimoveis.net/sitios/3.jpg" alt="ALT NAME">
-                        </td>
-                        <td>
-                            <b>
-                                Ref: 00512
-                            </b>
-                            <br>
-                            <b> Área para Venda </b>
-                            <br> 
-                            <b> Proprietário: </b>
-                            Jean Brito
-                            <br>
-                            <b> Localidade: </b>
-                            Jardim do Prado, Taquara - RS
-                            <br>
-                            <b> Valor: </b>
-                            R$ 1.000.000,00
-                        </td>
-                        <td>
-                            <a href="#" class="btn btn-primary"> Abrir Imóvel</a>
-                            <a href="#" class="btn btn-default">
-                                <i class="fa fa-edit"></i> Editar</a>                
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <i class="fa fa-2x fa-star" style="color: rgb(211, 211, 211);" data-toggle="tooltip" title="Imóvel não está em destaque"></i>
-                            <i class="fa fa-2x fa-globe" style="color: rgb(211, 211, 211);" data-toggle="tooltip" title="Não está disponivel no website"></i>
-                            <i class="fa fa-2x fa-tablet" style="color: rgb(211, 211, 211);" data-toggle="tooltip" title="Não está disponivel no catálogo móvel"></i>
-                        </td>
-                        <td>
-                            <img class="img-responsive" src="http://britoimoveis.net/sitios/3.jpg" alt="ALT NAME">
-                        </td>
-                        <td>
-                            <b>
-                                Ref: 00512
-                            </b>
-                            <br>
-                            <b> Área para Venda </b>
-                            <br> 
-                            <b> Proprietário: </b>
-                            Jean Brito
-                            <br>
-                            <b> Localidade: </b>
-                            Jardim do Prado, Taquara - RS
-                            <br>
-                            <b> Valor: </b>
-                            R$ 1.000.000,00
-                        </td>
-                        <td>
-                            <a href="#" class="btn btn-primary"> Abrir Imóvel</a>
-                            <a href="#" class="btn btn-default">
-                                <i class="fa fa-edit"></i> Editar</a>                
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <i class="fa fa-2x fa-star" style="color: rgb(211, 211, 211);" data-toggle="tooltip" title="Imóvel não está em destaque"></i>
-                            <i class="fa fa-2x fa-globe" style="color: rgb(211, 211, 211);" data-toggle="tooltip" title="Não está disponivel no website"></i>
-                            <i class="fa fa-2x fa-tablet" style="color: rgb(211, 211, 211);" data-toggle="tooltip" title="Não está disponivel no catálogo móvel"></i>
-                        </td>
-                        <td>
-                            <img class="img-responsive" src="http://britoimoveis.net/sitios/3.jpg" alt="ALT NAME">
-                        </td>
-                        <td>
-                            <b>
-                                Ref: 00512
-                            </b>
-                            <br>
-                            <b> Área para Venda </b>
-                            <br> 
-                            <b> Proprietário: </b>
-                            Jean Brito
-                            <br>
-                            <b> Localidade: </b>
-                            Jardim do Prado, Taquara - RS
-                            <br>
-                            <b> Valor: </b>
-                            R$ 1.000.000,00
-                        </td>
-                        <td>
-                            <a href="#" class="btn btn-primary"> Abrir Imóvel</a>
-                            <a href="#" class="btn btn-default">
-                                <i class="fa fa-edit"></i> Editar</a>                
-                        </td>
-                    </tr>
+                    <% end %>
                 </tbody>
             </table>
         </div>

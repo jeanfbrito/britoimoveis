@@ -3,4 +3,5 @@ $(document).ready(function(){
     var height = $(window).height() - 200;
     $(this).find(".modal-body").css("max-height", height);
   });
+  $(".stat-icon").tooltip();
 });
