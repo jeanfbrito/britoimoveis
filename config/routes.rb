@@ -12,6 +12,7 @@ Britoimoveis::Application.routes.draw do
   end
 
   namespace :admin do
+    resources :highlighted_properties
     resources :properties do
       resources :pictures do
         collection { post :sort }
