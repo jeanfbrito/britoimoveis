@@ -2,10 +2,29 @@
   <div class="container">
     <br>
 
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-      <% collection.each do |highlighted| %>
-
+    <div class="col-xs-offset-3 col-xs-6">
+      <ul id="highlighted_properties" data-update-url="<%= sort_admin_highlighted_properties_url %>">
+      <% @highlighted_properties.each do |highlighted| %>
+        <li id="highlighted_properties_<%= highlighted.id %>" class="col-xs-12" style="list-style:none;">
+          <div class="col-xs-1">
+            <br>
+            <br>
+            <i class="fa fa-arrows-v fa-3x handle" sytle="vertical-align: middle;"></i> 
+          </div>
+          <div class="col-xs-5">
+            <a title="Terras vizinhas" class="fancybox" href="">
+              <img src="<%= highlighted.property.get_cover.file.thumb('288x216#').url %>" class="img-responsive thumbnail" alt=""/>
+            </a>
+          </div>
+          <div class="col-xs-3">
+            <h4>Ref: <%= highlighted.property.id %></h4>
+            <button class="btn btn-danger" onClick='javascript:return select_delete();' data-original-title="Bold - Ctrl+B">
+              <i class="fa fa-times"></i> 
+              Excluir
+            </button>
+          </div>
+          
+      </li>
       <% end %> 
     </div>
   </div>
