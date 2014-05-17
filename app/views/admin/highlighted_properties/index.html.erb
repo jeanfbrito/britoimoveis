@@ -1,30 +1,21 @@
 <div class="row">
-  <div class="container">
     <br>
 
-    <div class="col-xs-offset-3 col-xs-6">
+    <div class=" col-xs-12">
       <ul id="highlighted_properties" data-update-url="<%= sort_admin_highlighted_properties_url %>">
       <% @highlighted_properties.each do |highlighted| %>
-        <li id="highlighted_properties_<%= highlighted.id %>" class="col-xs-12" style="list-style:none;">
-          <div class="col-xs-1">
-            <br>
-            <br>
-            <i class="fa fa-arrows-v fa-3x handle" sytle="vertical-align: middle;"></i> 
-          </div>
-          <div class="col-xs-5">
+        <li id="highlighted_properties_<%= highlighted.id %>" class="col-xs-3" style="list-style:none;">
+          <div class="col-xs-12 property-img">
             <a title="Terras vizinhas" class="fancybox" href="">
               <img src="<%= highlighted.property.get_cover.file.thumb('288x216#').url %>" class="img-responsive thumbnail" alt=""/>
             </a>
-          </div>
-          <div class="col-xs-3">
-            <h4>Ref: <%= highlighted.property.id %></h4>
-            <button class="btn btn-danger" onClick='javascript:return select_delete();' data-original-title="Bold - Ctrl+B">
-              <i class="fa fa-times"></i> 
-              Excluir
+            <button class="btn btn-danger delete" onClick='javascript:return select_delete();' data-original-title="Bold - Ctrl+B">
+              <i class="fa fa-times fa-2x"></i>
             </button>
           </div>
-          
+          <div class="reference">
+            <h4>Ref: <%= highlighted.property.id %></h4>
+          </div>
       </li>
       <% end %> 
-    </div>
   </div>
