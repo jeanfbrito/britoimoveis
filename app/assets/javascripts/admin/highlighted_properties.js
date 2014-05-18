@@ -12,6 +12,9 @@ $(document).ready(function(){
             $(ui.placeholder).height($('#highlighted_properties li').height());           
            }
     });
+    $('#highlighted_properties li a').on('ajax:success', function(event){
+        $(this).closest('li').remove();
+    })
   // $('.thumbnail').hover(function(){
   //   var del = $(this).find('.delete');
   //   console.log(del);

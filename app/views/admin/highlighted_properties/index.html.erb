@@ -10,9 +10,9 @@
             <a title="Terras vizinhas" href="">
               <img src="<%= highlighted.property.get_cover.file.thumb('288x216#').url %>" class="img-responsive thumbnail" alt=""/>
             </a>
-            <button class="btn btn-danger delete" onClick='javascript:return select_delete();' data-original-title="Bold - Ctrl+B">
+            <%= link_to admin_highlighted_property_path(highlighted), method: :delete, confirm: 'Remover dos destaques este imóvel?', class: 'btn btn-danger delete', 'data-message' => 'Are you sure?', 'data-severity' => 'danger', :remote => true do %>
               <i class="fa fa-times fa-2x"></i>
-            </button>
+          <% end %>
           </div>
           <div class="reference">
             <h4>Ref: <%= highlighted.property.id %></h4>
