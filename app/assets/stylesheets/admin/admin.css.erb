@@ -107,11 +107,11 @@ body {
   color: rgb(211, 211, 211);
 }
 #highlighted_properties .reference{
-  color: white;
-   overflow:hidden; 
+    color: white;
+    overflow:hidden; 
     position:absolute;
     bottom: 30px;
-    left: 30px;
+    left: -1px;
     text-align: right;
     float: right;
     z-index: 2;
@@ -131,6 +131,17 @@ body {
   position : absolute;
   display:none;
     top: 10px;
-    right: 30px;
+    right: 10px;
     z-index:100
 }
+#highlighted_properties { 
+  list-style-type: none; 
+  margin: 0; 
+  padding: 0; 
+}
+
+#highlighted_properties li { 
+  margin: 3px 3px 3px 0; 
+  padding: 1px; 
+}
+

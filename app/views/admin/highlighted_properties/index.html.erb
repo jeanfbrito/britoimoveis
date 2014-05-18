@@ -1,12 +1,13 @@
 <div class="row">
-    <br>
-
-    <div class=" col-xs-12">
+  <div class="container">
+    <h2>Propriedades em Destaque</h2>
+    <h4>Arraste as imagens para organizar a ordem de exibição das propriedades. Clique no X para remover dos destaques.</h4>
+    <div class="col-xs-12">
       <ul id="highlighted_properties" data-update-url="<%= sort_admin_highlighted_properties_url %>">
       <% @highlighted_properties.each do |highlighted| %>
-        <li id="highlighted_properties_<%= highlighted.id %>" class="col-xs-3" style="list-style:none;">
-          <div class="col-xs-12 property-img">
-            <a title="Terras vizinhas" class="fancybox" href="">
+        <li id="highlighted_properties_<%= highlighted.id %>" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+          <div class="property-img">
+            <a title="Terras vizinhas" href="">
               <img src="<%= highlighted.property.get_cover.file.thumb('288x216#').url %>" class="img-responsive thumbnail" alt=""/>
             </a>
             <button class="btn btn-danger delete" onClick='javascript:return select_delete();' data-original-title="Bold - Ctrl+B">
@@ -19,3 +20,4 @@
       </li>
       <% end %> 
   </div>
+</div>
