@@ -1,9 +1,14 @@
 <h1>Edit property</h1> 
 
-<div class"pull-right col-lg-3">
+<div class"col-lg-3">
   <a href="<%= admin_property_pictures_path(@property)%>" class="btn btn-success pull-right spaced">
                   <i class="fa fa-picture-o">
                   </i> Fotos da propriedade</a>
+</div>
+<div class"col-xs-3">
+  <div id="highlighted">
+    <%= render 'admin/highlighted_properties/highlight', :property => @property %>
+  </div>
 </div>
 
 <%= render 'form' %>
