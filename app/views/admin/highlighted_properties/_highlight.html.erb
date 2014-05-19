@@ -1,0 +1,11 @@
+<% if highlight = @property.highlighted_property %>
+  <%= form_for ([:admin, @property.highlighted_property(highlight)]), :html => { :method => :delete },
+                     :remote => true do |f| %>
+    <%= f.submit "Unlike" %>
+  <% end %>
+<% else %>
+  <%= form_for ([:admin, @property.build_highlighted_property(:property_id => @property.id)]), :remote => true do |f| %>
+    <%= f.hidden_field :property_id, value: @property.id %>
+    <%= f.submit "Like" %>
+  <% end %>
+<% end %>

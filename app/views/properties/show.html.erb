@@ -60,6 +60,10 @@
               <h4>Características do imóvel:</h4>
               <div class="property-info">
               <ul class="property-info">
+                <div id="highlighted">
+                  <%= render 'admin/highlighted_properties/highlight', :property => @property %>
+                </div>
+      
                 <% if @property.suits > 0 %>
                   <li><strong>Suites:</strong> <%= @property.suits %> </li>
                 <% end %>

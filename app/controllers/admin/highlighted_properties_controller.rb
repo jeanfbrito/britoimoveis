@@ -11,15 +11,24 @@ class Admin::HighlightedPropertiesController < InheritedResources::Base
     #render :json => @pictures.collect { |p| p.to_jq_upload }.to_json
     #render :json => [].to_json
   end
+  def create
+    #binding.pry
+    @highlight = HighlightedProperty.create params.require(:highlighted_property).permit(:property_id)
+    @property = @highlight.property
+    render :toggle
+  end
   def destroy
-    @highlighted_property = HighlightedProperty.find(params[:id])
-    @highlighted_property.destroy
-    # @photo.destroy
-    #flash[:success] = "Photo successfully deleted."
-    #respond_to do |format|
-      if @highlighted_property.destroy
-        render json: nil, status: :ok
-      end
+    highlight = HighlightedProperty.find(params[:id]).destroy
+    @property = highlight.property
+    render :toggle
+    # @highlighted_property = HighlightedProperty.find(params[:id])
+    # @highlighted_property.destroy
+    # # @photo.destroy
+    # #flash[:success] = "Photo successfully deleted."
+    # #respond_to do |format|
+    #   if @highlighted_property.destroy
+    #     render json: nil, status: :ok
+    #   end
     #end
         #format.js
         #render nothing: true
