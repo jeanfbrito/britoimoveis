@@ -20,12 +20,16 @@ class Admin::HighlightedPropertiesController < InheritedResources::Base
   def destroy
     highlight = HighlightedProperty.find(params[:id]).destroy
     @property = highlight.property
-    render :toggle
+    
     # @highlighted_property = HighlightedProperty.find(params[:id])
     # @highlighted_property.destroy
     # # @photo.destroy
     # #flash[:success] = "Photo successfully deleted."
-    # #respond_to do |format|
+    respond_to do |format|
+      #format.json { render json: nil, status: :ok }
+      format.js { render :toggle }
+    end
+
     #   if @highlighted_property.destroy
     #     render json: nil, status: :ok
     #   end
