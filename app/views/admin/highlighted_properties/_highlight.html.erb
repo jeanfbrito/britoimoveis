@@ -9,8 +9,8 @@
 <% else %>
   <%= form_for ([:admin, @property.build_highlighted_property(:property_id => @property.id)]), :remote => true do |f| %>
     <%= f.hidden_field :property_id, value: @property.id %>
-    <%= button_tag(type: 'submit', class: "btn btn-default not-published") do %>
-      <i class="fa fa-star"></i> 
+    <%= button_tag(type: 'submit', class: "btn btn-default") do %>
+      <i class="fa fa-star  not-published"></i> 
       Destaque
     <% end %>
   <% end %>
