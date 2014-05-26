@@ -1,17 +1,17 @@
-<% if website = @property.on_website %>
+<% if website = @property.on_tablet %>
   <%= form_for ([:admin, @property]), :remote => true do |f| %>
-    <%= f.hidden_field :on_website, value: false %>
+    <%= f.hidden_field :on_tablet, value: false %>
     <%= button_tag(type: 'submit', class: "btn btn-default pull-right spaced") do %>
-      <i class="fa fa-globe"></i> 
-      Website
+      <i class="fa fa-tablet"></i> 
+      Catálogo Móvel
     <% end %>
   <% end %>
 <% else %>
   <%= form_for ([:admin, @property]), :remote => true do |f| %>
-    <%= f.hidden_field :on_website, value: true %>
+    <%= f.hidden_field :on_tablet, value: true %>
     <%= button_tag(type: 'submit', class: "btn btn-default pull-right spaced") do %>
-      <i class="fa fa-globe  not-published"></i> 
-      Website
+      <i class="fa fa-tablet  not-published"></i> 
+      Catálogo Móvel
     <% end %>
   <% end %>
 <% end %>

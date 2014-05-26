@@ -1,7 +1,7 @@
 <% if highlight = @property.highlighted_property %>
   <%= form_for ([:admin, @property.highlighted_property(highlight)]), :html => { :method => :delete },
                      :remote => true do |f| %>
-    <%= button_tag(type: 'submit', class: "btn btn-default") do %>
+    <%= button_tag(type: 'submit', class: "btn btn-default pull-right spaced") do %>
       <i class="fa fa-star"></i> 
       Destaque
     <% end %>
@@ -9,7 +9,7 @@
 <% else %>
   <%= form_for ([:admin, @property.build_highlighted_property(:property_id => @property.id)]), :remote => true do |f| %>
     <%= f.hidden_field :property_id, value: @property.id %>
-    <%= button_tag(type: 'submit', class: "btn btn-default") do %>
+    <%= button_tag(type: 'submit', class: "btn btn-default pull-right spaced") do %>
       <i class="fa fa-star  not-published"></i> 
       Destaque
     <% end %>
