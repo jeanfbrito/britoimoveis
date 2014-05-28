@@ -22,7 +22,7 @@
   </div>
 
   <div class="form-group">
-    <%= f.input_field :property_type_id, collection: PropertyType.order(:name), label_method: :name, value_method: :id, include_blank: "Escolha tipo de imóvel" %>
+    <%= f.input_field :property_type_id, collection: PropertyType.order(:name).used, label_method: :name, value_method: :id, include_blank: "Escolha tipo de imóvel" %>
   </div>
 
   <div class="form-group">
