@@ -8,7 +8,7 @@ class District < ActiveRecord::Base
   end
 
   def has_proprieties?
-    properties.any?
+    properties.published.any?
   end
 
 end
