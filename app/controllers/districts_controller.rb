@@ -7,7 +7,7 @@ before_filter :find_city
   end
 
   def index
-    @districts = @city.districts.order("name")
+    @districts = @city.districts.order("name").used
     #render :json => @pictures.collect { |p| p.to_jq_upload }.to_json
     render :json => @districts.to_json
   end
