@@ -1,7 +1,7 @@
 <% if website = @property.on_website %>
   <%= form_for ([:admin, @property]), :remote => true do |f| %>
     <%= f.hidden_field :on_website, value: false %>
-    <%= button_tag(type: 'submit', class: "btn btn-success pull-right spaced") do %>
+    <%= button_tag(type: 'submit', class: "btn btn-default pull-right spaced") do %>
       <i class="blacked fa fa-globe"></i> 
       Website
     <% end %>
