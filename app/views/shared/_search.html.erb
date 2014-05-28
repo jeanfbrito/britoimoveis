@@ -1,6 +1,6 @@
 <%= simple_form_for :search, :url => properties_path, html: { novalidate: true }, :method => :get do |f| %>
   <div class="form-group">
-    <%= f.input_field :city_id, collection: City.order(:name), label_method: :name, value_method: :id, include_blank: "Escolha a Cidade" %>
+    <%= f.input_field :city_id, collection: City.order(:name).used, label_method: :name, value_method: :id, include_blank: "Escolha a Cidade" %>
   </div>
 
   <div class="form-group">
