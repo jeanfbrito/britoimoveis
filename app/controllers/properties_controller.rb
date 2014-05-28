@@ -4,7 +4,7 @@ class PropertiesController < ApplicationController
   SERCH_MAX_VALUE = '350000'
 
   def index
-    @properties = Property.where(nil).page(params[:page]) # creates an anonymous scope
+    @properties = Property.published.page(params[:page]) # creates an anonymous scope
     if params[:search]   
       if params[:search][:city_id].present?
         city = City.find(params[:search][:city_id]) #porque diabos nao funciona com where? city = City.where(id: params[:search][:city_id]) #porque diabos nao funciona com where?

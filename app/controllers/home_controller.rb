@@ -3,7 +3,7 @@ class HomeController < ApplicationController
     #@search = Property.search(params[:q])
     #@properties = Property.all
     @banner = Property.first(3)
-    @destaques = Property.first(8)
+    @destaques = Property.published.first(8)
     respond_to do |format|
       format.html # index.html.erb
     end

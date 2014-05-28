@@ -8,6 +8,8 @@ class Property < ActiveRecord::Base
 
   validates :district, :property_type, :business_type, presence: true
 
+  scope :published, where(on_website: true)
+
   scope :id, -> (id) { where id: id }
   scope :district_id, -> (district_id) { where district_id: district_id }
   scope :bedrooms, -> (bedrooms) { where bedrooms: bedrooms }
