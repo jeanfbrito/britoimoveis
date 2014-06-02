@@ -1,25 +1,28 @@
 <div id="menu">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs">
-          <li class="active">
+          <li>
             <a href="#home" data-toggle="tab">
               <i class="fa fa-dashboard fa-3x"></i><br>
               Dashboard
             </a>
           </li>
-          <li>
-            <a href="#profile" data-toggle="tab">
+          <li class="<%= 'active' if controller?("admin/properties") %>">
+            <a href="#properties" data-toggle="tab">
               <i class="fa fa-home fa-3x"></i><br>
               Imóveis
             </a>
           </li>
-          <li>
+          <li class="">
             <a href="#messages" data-toggle="tab">
               <i class="fa fa-group fa-3x"></i><br>
               Clientes
             </a>
           </li>
-          <li>
+          <li class="
+                      <%= 'active' if controller?("admin/cities") %>
+                      <%= 'active' if controller?("admin/districts") %>
+                      ">
             <a href="#general" data-toggle="tab">
               <i class="fa fa-list fa-3x"></i><br>
               Diversos
@@ -47,7 +50,7 @@
 
         <!-- Tab panes -->
         <div class="tab-content">
-          <div class="tab-pane active" id="home">
+          <div class="tab-pane" id="home">
             <a href="#" >
               Website
             </a>
@@ -61,7 +64,7 @@
               Website
             </a>
           </div>
-          <div class="tab-pane" id="profile">
+          <div class="tab-pane <%= 'active' if controller?("admin/properties") %>" id="properties">
             <a href="<%= admin_properties_url %>" >
               <i class="fa fa-search"></i>
               Pesquisar Imóveis
@@ -92,12 +95,15 @@
               Website
             </a>
           </div>
-          <div class="tab-pane" id="general">
+          <div class="tab-pane  
+                                <%= 'active' if controller?("admin/cities") %>
+                                <%= 'active' if controller?("admin/districts") %>
+                                " id="general">
+            <a href="<%= admin_districts_url %>" >
+              Bairros
+            </a>
             <a href="<%= admin_cities_url %>" >
               Cidades
-            </a>
-            <a href="<%= admin_districts_url %>" >
-              Distritos
             </a>
             <a href="#" >
               Relatórios
