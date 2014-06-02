@@ -1,0 +1,24 @@
+<div class"container">
+  <%= render 'form' %>
+
+<table class="table table-striped table-bordered ">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Cidade</th>
+      <th>Estado</th>
+      <th>Propriedades atribuidas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cities.each do |city| %>
+    <tr>
+      <td><i class="fa fa-edit"></i></td>
+      <td><%= city.name %></td>
+      <td><%= city.state.name %></td> 
+      <td><%= city.properties.count %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

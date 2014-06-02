@@ -1,0 +1,24 @@
+<div class="col-xs-12">
+  <%= simple_form_for [:admin, District.new], url: admin_districts_path, html: { :class => '' } do |f| %>
+    <div class="form-group">
+      <div class="col-xs-3">
+        <%= f.input_field :name, placeholder: 'Ex. Rio da Ilha'%>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-xs-2">
+        <%= f.input_field :cep, placeholder: '95600-000'%>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-xs-3">
+        <%= f.input_field :city_id, collection: City.order(:name), label_method: :name, value_method: :id, include_blank: "Selecione a cidade" %>
+        </div>
+    </div>
+    <div class="form-group">
+      <div class="col-xs-2">
+        <%= submit_tag "Criar Bairro", :name => nil, :class => 'btn btn-success' %>
+        </div>
+    </div>
+  <% end %>
+</div>

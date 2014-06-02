@@ -1,0 +1,26 @@
+<div class"container">
+  <%= render 'form' %>
+
+<table class="table table-striped table-bordered ">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Bairro</th>
+      <th>CEP</th>
+      <th>Cidade</th>
+      <th>Propriedades atribuidas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @districts.each do |district| %>
+    <tr>
+      <td><i class="fa fa-edit"></i></td>
+      <td><%= district.name %></td>
+      <td><%= district.cep %></td>
+      <td><%= district.city.name %></td> 
+      <td><%= district.properties.count %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

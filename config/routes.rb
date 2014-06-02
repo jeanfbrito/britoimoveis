@@ -15,6 +15,10 @@ Britoimoveis::Application.routes.draw do
     resources :highlighted_properties do
       collection { post :sort }
     end
+    
+    resources :cities
+    resources :districts
+
     resources :properties do
       resources :pictures do
         collection { post :sort }
