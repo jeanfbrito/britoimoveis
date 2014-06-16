@@ -13,10 +13,9 @@
 </head>
 <body>
 
+  <!-- Admin menu -->
+  <%= render "admin/shared/menu"%>
   <div class="container" style=" border 1px solid red;">
-    <br>
-    <!-- Admin menu -->
-    <%= render "admin/shared/menu"%>
     <% flash.each do |key, value| %>
         <div class="<%= flash_class(key) %>">
           <a class="close" data-dismiss="alert">&#215;</a>
