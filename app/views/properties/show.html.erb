@@ -57,6 +57,7 @@
                   Código de referência: <%= @property.id %>
                 </span>
               </h2>
+              <br>
               <h4>Características do imóvel:</h4>
               <div class="property-info">
               <ul class="property-info">      
@@ -79,7 +80,7 @@
               <p class="asking-price">
                   <h2>
                     <span class="label label-default">
-                      <% if @property.sell_price %>
+                      <% if @property.sell_price > 0 %>
                         Valor: <%= number_to_currency(@property.sell_price) %>
                       <% else %>
                         Consulte o valor
